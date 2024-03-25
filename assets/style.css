@@ -6,7 +6,9 @@ main {
   align-items: center;
   width: 100%;
 }
-
+.resume-header {
+  text-align: center;
+}
 .resume-container h3 {
   text-align: center;
   padding-bottom: 5px;
@@ -61,4 +63,12 @@ th {
   margin-bottom: 10px;
   border-bottom: 1px solid black;
   padding-bottom: 5px;
+}
+#complete-resume-h3,
+#compact-resume-h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.print-only {
+  display: none;
 }
