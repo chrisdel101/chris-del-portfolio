@@ -9,9 +9,11 @@ main {
 
 .resume-container h3 {
   text-align: center;
-  border-bottom: silver 1px solid;
   padding-bottom: 5px;
   margin-bottom: 10px;
+}
+.resume-complete.resume-container h3 {
+  border-bottom: silver 1px solid;
 }
 .resume-container {
   background-color: whitesmoke;
@@ -25,8 +27,13 @@ main {
 }
 .resume-title {
   font-family: 'Courier New', Courier, monospace;
-  display: flex;
-  justify-content: space-around;
+  text-align: center;
+}
+.resume-title h2 {
+  margin-bottom: 0;
+}
+.resume-title h4 {
+  margin: 0;
 }
 table {
   margin-top: 10px;
@@ -42,4 +49,16 @@ th {
 }
 .description {
   font-size: 0.8em;
+}
+.edu-items {
+  list-style: none;
+}
+.edu-item p {
+  padding: 2px 0;
+}
+.edu-item:not(.exclude) {
+  max-width: 50%;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
 }
