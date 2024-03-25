@@ -7,6 +7,12 @@ main {
   width: 100%;
 }
 
+.resume-container h3 {
+  text-align: center;
+  border-bottom: silver 1px solid;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
 .resume-container {
   background-color: whitesmoke;
   width: 80%;
@@ -14,6 +20,8 @@ main {
   margin: auto;
   font-family: monospace;
   color: black;
+  padding: 0 15px;
+  padding-bottom: 10px;
 }
 .resume-title {
   font-family: 'Courier New', Courier, monospace;
@@ -21,6 +29,7 @@ main {
   justify-content: space-around;
 }
 table {
+  margin-top: 10px;
   border-collapse: collapse;
   width: 100%;
 }
@@ -30,4 +39,7 @@ th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+}
+.description {
+  font-size: 0.8em;
 }

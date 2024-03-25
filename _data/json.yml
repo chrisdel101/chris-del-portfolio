@@ -8,8 +8,10 @@
   typed: true
 - key: resumes
   value:
-    - value: html
-      url: /resume
+    - value: html complete version
+      url: /resume-complete
+    - value: html compact version
+      url: /resume-compact
     - value: pdf
       url: /resume.pdf
 - key: Contact
