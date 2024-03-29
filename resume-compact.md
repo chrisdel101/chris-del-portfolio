@@ -4,11 +4,11 @@ layout: resume
 ---
 <h2 id="compact-resume-h2" class="resume-header compact-resume-header no-print">Resume Compact</h2>
 <h4 id="compact-resume-h3" class="resume-header compact-resume-header no-print">An Compact, Printer-Frienly Explanation of my Experience</h4>
-<input class="no-print" type="button" value="Print this page" onClick="window.print()">
+<input class="no-print" type="button" value="Print Resume" onClick="window.print()">
 <section class="resume-container">
     <div class="resume-title">
         <h2>Chris Dielschnieder</h2>
-        <h4>Software Developer</h4>
+        <h4>SOFTWARE DEVELOPER</h4>
         <div class="print-only">Phone: 306-519-0138</div>
         <div class="print-only">Email: chrisdel.tech9@gmail.com</div>
     </div>
@@ -50,7 +50,7 @@ layout: resume
                 </tr>
                 <tr>
                     <td>Rails/Ruby</td>
-                    <td>5</td>
+                    <td>2</td>
                 </tr>
             </table>
         </div>
@@ -68,136 +68,6 @@ layout: resume
             </ul>
         </div>
     </div>
-    <div id="work-experience">
-        <h3>WORK EXPERIENCE</h3>
-        <div class="job-detail">
-            <p><strong>Software & Hardware Development Intern</strong></p>
-            <p>Lytehorse Labs | May 2022 - Aug 2022 | Regina, SK</p>
-            <ul>
-                <li>Overall job was to develop native software for a custom built dynamometer. Dyno was speficiically for testing company electric ATV.</li>
-                <li>Primary task #1 was to develop native software using Python, including PY TKinter for GUI.</li>
-                <ul>
-                <li> Utilized Python multithreading and TCP socket APIs to allow asynchronous communication.</li>
-                <li>Using serial, Python signalled Ardunio. Arduino then siganlled electric motor controllers on machine.</li>
-                </ul>
-                <li>Primary task #2 was develop logic for Arduino microcontroller for handling input serial input from Python, handling serial input from motors, and for handling Arduino output.</li>
-                <ul>
-                <li>Arduino code was written in C with Arduino IDE.</li>
-                <li>Two-way serial communication meant Arduino accepted input from both Python and motor contoroller systems simutaenously, and sent out approaite signal outputs.</li>
-                </ul>
-            </ul>
-        </div>
-        <div class="job-detail">
-            <p><strong>Front End Developement Intern</strong></p>
-            <p>54e Dev Studios | Jan 2022 - May 2022 | Regina, SK</p>
-            <ul>
-                <li>Overall job was to develop new client-side features for company's internal content managment system using React and Typescript.</li>
-                <li>Primary task was to fulfill supervior assigned tickets, and to assign new tickets to tickets myself when required. Tasks included:</li>
-                <ul>
-                    <li>Adding/removing elements such as buttons, checkboxes, radios, etc., along with required operating logic.</li>
-                    <li>Adding new pages to CMS for entirelty new functionality, i.e. '/items' page.</li>
-                </ul>
-                <li>Secondary task was to make the CMS mobile-friendly.</li>
-                <ul>
-                    <li>Noticing that many CMS pages were not responsive, I overhauled as many as possible, making them functionally responsive on mobile.</li>   
-                    <li>This positivley impacted staff since many were using the CMS on mobile. 
-                    </li>
-                </ul>
-                <li>Additional tasks included monitoring build pipeline for errors, and assuring smooth merge of all my pull requests.</li>
-            </ul>
-        </div>
-        <div class="job-detail">
-            <p><strong>Full-Stack Developement Intern</strong></p>
-            <p>Raven Industries | May 2021 - Aug 2021 | Regina, SK</p>
-            <ul>
-                <li>Overall job was to develop new client-side features for a ground control driving simulator for autonomous vehicle OMNiDRIVE. </li>
-                <li>Writing unit tests for internal systems also a major focus of my term.</li>
-                <li>Using React, tasks included:</li>
-                <ul>
-                    <li>Creating components within the simulator to expand simulator functionality</li>
-                    <li>Main React task was to add a new expandandle panel, along with the connecting logic to make it functional</li>
-                    <li>Other smalls task included adding small UI items such as buttons.</li>
-                </ul>
-                <li>
-                Unit testing for internal systems meant diving into code used for driving autonmous vehicle. I increased the test coverage by 10% by term end.
-                </li>
-            </ul>
-        </div>
-        <div class="job-detail">
-            <p><strong>Front-End Developement Intern</strong></p>
-            <p>Sasktel | July 2020 - Dec 2020 | Regina, SK</p>
-            <ul>
-                <li>Overall job was to develop and test new client-side features for company website sasktel.ca.</li>
-                <li>Primary task was to fulfil supervisor assigned tickets. Assigned items included:</li>
-                <ul>
-                    <li>Adding small UI features to pages, i.e buttons, using Angular and vanilla JS.</li>
-                    <li>Test that features worked acorss multiple environments, i.e. Test, Pre-prod, Prod.</li>
-                </ul>
-                <li>
-                Secondary tasks were to investigate and fix bugs that reported by QA testers.
-                </li>
-            </ul>
-        </div>
-        <div class="job-detail">
-            <p><strong>Front-End Developement</strong></p>
-            <p>Virtual High School | June 2017 - Sept 2018 | BayField, ON</p>
-            <ul>
-                <li>Overall job was to develop and test new client-side features for company website sasktel.ca.</li>
-                <li>Primary task was to fulfil supervisor assigned tickets. Assigned items included:</li>
-                <ul>
-                    <li>Adding small UI features to pages, i.e buttons, using Angular and vanilla JS.</li>
-                    <li>Test that features worked acorss multiple environments, i.e. Test, Pre-prod, Prod.</li>
-                </ul>
-                <li>
-                Secondary tasks were to investigate and fix bugs that reported by QA testers.
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div id="education">
-            <h3>EDUCATION</h3>
-            <ul class="edu-items">
-                <li class="edu-item">
-                    <p>
-                       <strong> Bachelor of Science: </strong> Computer Science
-                    </p>
-                    <p>
-                        2019-2013
-                    </p>
-                    <p>
-                        University of Regina
-                    </p>
-                </li>
-                <li class="edu-item">
-                    <p>
-                       <strong> Web Dev Immersive: </strong> 10 week bootcamp
-                    </p>
-                    <p>2016</p>
-                    <p>
-                        General Assembly Toronto
-                    </p>
-                </li>
-                <li class="edu-item">
-                    <p>
-                       <strong>  Master of Fine Arts: </strong> English
-                    </p>
-                    <p>2012-2014</p>
-                    <p>
-                        City College of New York
-                    </p>
-                </li>
-                <li class="edu-item exclude">
-                    <p>
-                       <strong>  Bachelor of Arts: </strong> English
-                    </p>
-                    <i>
-                    summa cum lauda
-                    </i>
-                    <p>2009-2012</p>
-                    <p>
-                        City College of New York
-                    </p>
-                </li>
-            </ul>
-        </div>
+    {% include work_experience.html %}
+    {% include education.html %}
 </section>

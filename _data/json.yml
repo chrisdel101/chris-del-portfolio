@@ -1,31 +1,33 @@
-- key: Name
+- key: title
   value: 'Chris Del porfolio'
-- key:
+- key: whoami
   value:
-    - Hi!
     - this is my porfolio
     - click a link below
   typed: true
 - key: resumes
   value:
-    - value: html complete version
+    - value: html --verbose
       url: /resume-complete
-    - value: html compact version
+    - value: html --print
       url: /resume-compact
     - value: pdf
       url: /resume.pdf
-- key: Contact
-  value:
-    - key: Location
-      value: Regina, Canada
-    - key: Email
-      value: chrisde.tech9 at gmail
 - key: work
   value: /work
   url: /work
+- key: open source
+  value: /open-source
+  url: /open-source
 - key: Profiles
   value:
     - value: LinkedIn
       url: https://www.linkedin.com/in/chrisdel1/
     - value: GitHub
       url: https://github.com/chrisdel101
+- key: about
+  value:
+    - key: Location
+      value: Regina, Canada
+    - key: Email
+      value: chrisde.tech9 at gmail
