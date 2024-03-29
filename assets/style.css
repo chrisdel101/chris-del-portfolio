@@ -14,14 +14,33 @@ main {
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
+.open-source-container {
+  text-align: center;
+  padding-bottom: 30px;
+  height: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.open-source-container h2 {
+  margin: 0;
+}
+.open-source-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 300px;
+}
 .resume-complete.resume-container h3 {
   border-bottom: silver 1px solid;
 }
-.resume-container {
-  background-color: whitesmoke;
+
+.page-container {
   width: 80%;
   max-width: 1200px;
   margin: auto;
+}
+.resume-container {
+  background-color: whitesmoke;
   font-family: monospace;
   color: black;
   padding: 0 15px;
@@ -42,12 +61,28 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-
 td,
 th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+}
+.open-source-container td,
+.open-source-container th {
+  border: 1px solid var(--oc-green-9);
+  text-align: left;
+  padding: 8px;
+}
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.open-source-container td {
+  font-size: 0.6em;
+}
+.open-source-container table {
+  color: #dddddd;
 }
 .description {
   font-size: 0.8em;
@@ -71,4 +106,12 @@ th {
 }
 .print-only {
   display: none;
+}
+.open-source-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  text-align: left;
+}
+.grid-item {
+  font-size: 0.6em;
 }
