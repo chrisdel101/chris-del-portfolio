@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chris Del Portfolio</title>
-
     {% seo title=false %}
     <link
       rel="apple-touch-icon"
@@ -16,20 +15,16 @@
     <link rel="stylesheet" href="assets/css/normalize.css" />
     <link rel="stylesheet" href="assets/css/open-color.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <script src="assets/js/typed.umd.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="print"
+      href="../assets/print.css"
+    />
+    <link rel="stylesheet" href="../assets/style.css" />
   </head>
 
   <body>
     <main>{{ content }}</main>
-    <script>
-      var typed = new Typed('#typed', {
-        stringsElement: '#strings',
-        backSpeed: 10,
-        typeSpeed: 30,
-        backDelay: 1000,
-        loop: true,
-        smartBackspace: true,
-      })
-    </script>
   </body>
 </html>

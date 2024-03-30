@@ -4,7 +4,7 @@ layout: resume
 ---
 <h2 id="complete-resume-h2" class="resume-header complete-resume-header" >Resume Complete</h2>
 <h3 id="complete-resume-h3"  class="resume-header complete-resume-header">An Indepth Explanation of my Experience</h3>
-<section class="resume-container resume-complete">
+<section class="resume-container resume-complete page-container">
     <div class="resume-title">
         <h2>Chris Dielschnieder</h2>
         <h4>SOFTWARE DEVELOPER1</h4>

@@ -5,7 +5,7 @@ layout: resume
 <h2 id="compact-resume-h2" class="resume-header compact-resume-header no-print">Resume Compact</h2>
 <h4 id="compact-resume-h3" class="resume-header compact-resume-header no-print">An Compact, Printer-Frienly Explanation of my Experience</h4>
 <input class="no-print" type="button" value="Print Resume" onClick="window.print()">
-<section class="resume-container">
+<section class="resume-container page-container">
     <div class="resume-title">
         <h2>Chris Dielschnieder</h2>
         <h4>SOFTWARE DEVELOPER</h4>

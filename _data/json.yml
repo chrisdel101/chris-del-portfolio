@@ -1,17 +1,18 @@
 - key: title
-  value: 'Chris Del porfolio'
+  value: 'Chris Del portfolio'
 - key: whoami
   value:
+    - i'm a developer
     - this is my porfolio
     - click a link below
   typed: true
-- key: resumes
+- key: my resumes
   value:
     - value: html --verbose
       url: /resume-complete
-    - value: html --print
+    - value: html --output=printer-friendly
       url: /resume-compact
-    - value: pdf
+    - value: pdf --standard
       url: /resume.pdf
 - key: work
   value: /work
