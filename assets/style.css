@@ -6,15 +6,18 @@ main {
   align-items: center;
   width: 100%;
 }
-.resume-header {
+.resume-header,
+.compact-resume-heading {
   text-align: center;
+}
+.compact-resume-heading > div {
+  margin-bottom: 10px;
 }
 .resume-container h3 {
   text-align: center;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
 }
-.open-source-container {
+.open-source-container,
+.work-container {
   text-align: center;
   padding-bottom: 30px;
   height: 100%;
@@ -29,21 +32,54 @@ main {
   justify-content: space-evenly;
   min-height: 200px;
 }
-.resume-complete.resume-container h3 {
-  border-bottom: silver 1px solid;
+.work-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 100px;
+  margin-bottom: 10px;
 }
-
+.work-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.resume-heading,
+.compact-resume-heading {
+  margin-bottom: 5px;
+}
+.work-project {
+  font-size: 0.8em;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  width: 300px;
+  min-height: 200px;
+  background-color: #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: black;
+  padding: 5px;
+}
+.work-project a {
+  color: #0000ff;
+}
 .page-container {
   width: 80%;
   max-width: 1200px;
   margin: auto;
 }
-.resume-container {
-  background-color: whitesmoke;
+.resume-content {
+  margin-bottom: 15px;
+}
+.resume-content {
   font-family: monospace;
-  color: black;
-  padding: 0 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   padding-bottom: 10px;
+  padding-top: 5px;
+  background-color: whitesmoke;
+  color: black;
 }
 .resume-title {
   font-family: 'Courier New', Courier, monospace;
@@ -98,11 +134,45 @@ th {
   border-bottom: 1px solid black;
   padding-bottom: 5px;
 }
-#complete-resume-h3,
-#compact-resume-h3 {
-  margin-top: 0;
-  margin-bottom: 5px;
-}
 .print-only {
   display: none;
+}
+/* https://stackoverflow.com/a/68715075/5972531 */
+.cir {
+  width: 50px;
+  height: 50px;
+  background: lightblue; /*important*/
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon {
+  position: absolute;
+  top: 1.5em;
+}
+@media (max-width: 768px) {
+  .work-content {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .work-project {
+    width: 80%;
+  }
+}
+@media (max-width: 660px) {
+  .cir {
+    width: 30px;
+    height: 30px;
+  }
+  .work-project {
+    width: 100%;
+  }
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /* height: 200px; */
+  }
 }

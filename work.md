@@ -4,6 +4,9 @@ layout: default
 <div class="page-container work-container">
     <div class="work-heading">
         <h2>Work Examples</h2>
+        <a href="/">
+            <div class="cir icon">CD</div>
+        </a>
         <div>
             A collection of various personal projects. 
         </div>

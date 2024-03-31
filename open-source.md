@@ -5,6 +5,9 @@ layout: default
 <div class="page-container open-source-container">
     <div class="open-source-heading">
         <h2>Open Source Contributions</h2>
+        <a href="/">
+            <div class="cir icon">CD</div>
+        </a>
         <div>
             Even though I've only made a few, very small contributions, technically, I'm an contributor, right??
             <br>
