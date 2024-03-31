@@ -1,6 +1,7 @@
 ---
 
-layout: resume  
+layout: default  
+  
 ---
 <h2 id="compact-resume-h2" class="resume-header compact-resume-header no-print">Resume Compact</h2>
 <h4 id="compact-resume-h3" class="resume-header compact-resume-header no-print">An Compact, Printer-Frienly Explanation of my Experience</h4>
