@@ -1,7 +1,7 @@
-title: ""
-description: ""
-baseurl: ""
-url: ""
+title: ''
+description: ''
+baseurl: '/chris_del_portfolio'
+url: 'https://chrisdel101.github.io'
 
 lowercase: true
 color_bg: var(--oc-gray-9)
@@ -10,7 +10,7 @@ color_keyval: var(--oc-green-4)
 color_hover: var(--oc-green-5)
 show_quotes: true
 show_commas: true
-target: "_self"
+target: '_self'
 
 plugins:
   - jekyll-seo-tag
