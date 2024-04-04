@@ -9,17 +9,17 @@
 - key: my resumes
   value:
     - value: html --verbose
-      url: /chris_del_portfolio/resume-complete
+      url: /chris-del-portfolio/resume-complete
     - value: html --output=printer-friendly
-      url: /chris_del_portfolio/resume-compact
+      url: /chris-del-portfolio/resume-compact
     - value: pdf --standard
-      url: /chris_del_portfolio/resume.pdf
+      url: /chris-del-portfolio/resume.pdf
 - key: work
   value: /work
-  url: /chris_del_portfolio/work
+  url: /chris-del-portfolio/work
 - key: open source
   value: /open-source
-  url: /chris_del_portfolio/open-source
+  url: /chris-del-portfolio/open-source
 - key: Profiles
   value:
     - value: LinkedIn
