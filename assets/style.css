@@ -171,8 +171,8 @@ th {
   }
   html,
   body {
-    overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-x: hidden; */
+    /* overflow-y: hidde  n; */
     /* height: 200px; */
   }
 }

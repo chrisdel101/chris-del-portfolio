@@ -18,8 +18,8 @@
   value: /work
   url: /chris_del_portfolio/work
 - key: open source
-  value: /chris_del_portfolio/open-source
-  url: /open-source
+  value: /open-source
+  url: /chris_del_portfolio/open-source
 - key: Profiles
   value:
     - value: LinkedIn
