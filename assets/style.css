@@ -16,12 +16,17 @@ main {
 .resume-container h3 {
   text-align: center;
 }
+.resume-container {
+  overflow-y: scroll;
+}
+
 .open-source-container,
 .work-container {
   text-align: center;
   padding-bottom: 30px;
   height: 100%;
   overflow-x: scroll;
+  overflow-y: scroll;
 }
 .open-source-container h2 {
   margin: 0;
