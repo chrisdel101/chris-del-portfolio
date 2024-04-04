@@ -9,16 +9,16 @@
 - key: my resumes
   value:
     - value: html --verbose
-      url: /resume-complete
+      url: /chris_del_portfolio/resume-complete
     - value: html --output=printer-friendly
-      url: /resume-compact
+      url: /chris_del_portfolio/resume-compact
     - value: pdf --standard
-      url: /resume.pdf
+      url: /chris_del_portfolio/resume.pdf
 - key: work
   value: /work
-  url: /work
+  url: /chris_del_portfolio/work
 - key: open source
-  value: /open-source
+  value: /chris_del_portfolio/open-source
   url: /open-source
 - key: Profiles
   value:
