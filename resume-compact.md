@@ -6,7 +6,7 @@ layout: default
 <section class="resume-container page-container">
     <div class="compact-resume-heading">
         <h2 class="resume-header no-print">Resume Compact</h2>
-        <a class="no-print" href="/">
+        <a class="no-print" href="/chris-del-portfolio">
             <div class="cir icon">CD</div>
         </a>
         <div class="no-print">An Compact, Printer-Frienly Explanation of my Experience</div>

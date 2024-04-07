@@ -5,7 +5,7 @@ layout: default
 <section class="resume-container resume-complete page-container">
     <div class="resume-heading">
         <h2 class="resume-header complete-resume-header" >Resume Complete</h2>
-        <a href="/">
+        <a href="/chris-del-portfolio">
             <div class="cir icon">CD</div>
         </a>    
         <div  class="resume-header complete-resume-header">An Indepth Explanation of my Experience</div>

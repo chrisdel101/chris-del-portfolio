@@ -5,7 +5,7 @@ layout: default
 <div class="page-container open-source-container">
     <div class="open-source-heading">
         <h2>Open Source Contributions</h2>
-        <a href="/">
+        <a href="/chris-del-portfolio">
             <div class="cir icon">CD</div>
         </a>
         <div>
