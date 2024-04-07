@@ -32,6 +32,10 @@ layout: default
                     <td>5</td>
                 </tr>
                 <tr>
+                    <td>Vue</td>
+                    <td>2</td>
+                </tr>
+                <tr>
                     <td>Typescript</td>
                     <td>2</td>
                 </tr>
@@ -42,6 +46,10 @@ layout: default
                 <tr>
                     <td>C/C++</td>
                     <td>5+</td>
+                </tr>
+                <tr>
+                    <td>Arduino</td>
+                    <td>1   </td>
                 </tr>
             </table>
         </div>
@@ -58,9 +66,10 @@ layout: default
                 <li>Public Speaking/Writing</li>
             </ul>
         </div>
+            {% include work_experience.html %}
             <div id="all-langs-tech">
                 <h3>ALL LANGUAGES AND TECH</h3>
-                <p class="description">These are languages and tech I've worked with, but have not yet gained any on-the-job expereience with.</p>
+                <p class="description">These are languages and tech I've worked with or studied, but have not yet gained sufficient professional experience.</p>
                 <table>
                     <tr>
                         <th>Tech</th>
@@ -72,10 +81,6 @@ layout: default
                     </tr>
                     <tr>
                         <td>NoSQL/MongoDB</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>Vue</td>
                         <td>2</td>
                     </tr>
                     <tr>
@@ -104,12 +109,10 @@ layout: default
                     </tr>
                 </table>
             </div>
-            {% include work_experience.html %}
             <div id="intermediate-skills">
-                <h3>SKILLS IN DEVELOPMENT</h3>
-            <p class="description">Skills I possess but that are not yet at a proffessional working level.</p>
+                <h3>ADDITIONAL AREAS OF INTEREST</h3>
+            <p class="description">I have studied or worked on the basics in these fields.  </p>
                 <ul>
-                    <li>Arduino</li>
                     <li>Hardware and Robotics</li>
                     <li>Computer Graphics</li>
                     <li>Cryptopgraphy</li>
