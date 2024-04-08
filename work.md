@@ -4,7 +4,7 @@ layout: default
 <div class="page-container work-container">
     <div class="work-heading">
         <h2>Work Examples</h2>
-        <a href="/">
+        <a href="/chris-del-portfolio">
             <div class="cir icon">CD</div>
         </a>
         <div>
@@ -85,7 +85,7 @@ layout: default
                 F1 Stats Scraper API
             </div>
             <div>
-                About: Scrapes formula 1 data and returns it in json form. Works with along with the F1 web app. Built 2019.
+                About: Scrapes Formula 1 data and returns it in json. Works as an API to F1 Web app. Built 2019.
             </div>
             <div>
                 Code: <a href="https://github.com/chrisdel101/f1-api">Link</a>
@@ -94,7 +94,7 @@ layout: default
                 Tech: Python, Flask, BeautifulSoup, Postgres, SQLAlchemy
             </div>
              <div>
-                Status: Development Stalled
+                Status: Development On Hold
             </div>
         </div>
         <div class="work-project">
@@ -102,7 +102,7 @@ layout: default
                 F1 Web App
             </div>
             <div>
-                About: Consumes F1 Stats Scraper API json and builds baseball-style Formula 1 cards. Build 2019.
+                About: Consumes F1 Stats Scraper API json and builds baseball-style cards for Formula 1. Build 2019.
             </div>
             <div>
                 Code: <a href="https://github.com/chrisdel101/f1-web">Link</a>
@@ -111,7 +111,7 @@ layout: default
                 Tech: Node, Koa, Puppeteer
             </div>
              <div>
-                Status: Development Stalled
+                Status: Development On Hold
             </div>
         </div>
         <div class="work-project">
@@ -119,7 +119,7 @@ layout: default
                 Place Puppy (2018-2023)
             </div>
             <div>
-                About: Calling the endpoint returned a puppy image for use as a placeholder. The app ran for 5 years is now offline.
+                About: Call an endpoint, get a puppy. Images were used as placeholders in development,or wherever.
             </div>
             <div>
                 Code: <a href="https://github.com/chrisdel101/place-puppy   ">Link</a>

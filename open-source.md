@@ -9,9 +9,9 @@ layout: default
             <div class="cir icon">CD</div>
         </a>
         <div>
-            Even though I've only made a few, very small contributions, technically, I'm an contributor, right??
+            I've made a few  very small contributions. Technically, I am still a contributor, right??
             <br>
-             Hoping to  become a more legit contribtor. Finding a project can be tough.
+            I'm always on the lookout for ways to contribute more.
         </div>
     </div>
     <table>
@@ -25,19 +25,19 @@ layout: default
                 <td>react-data-table-component: Fix displaced page elements on project web site.</td>
                 <td><a href="https://github.com/jbetancur/react-data-table-component/pull/1036">Link</a></td>
                 <td>stale + unmerged</td>
-                <td>After seeing this bug I submitted the fix without consulation. The maintainers never acknowledged or merged it No idea why since it fixed the issue.</td>
+                <td>After seeing this bug I submitted the fix without consulation. The maintainers never acknowledged or merged it. No idea why. It fixed the issue.</td>
             </tr>
             <tr>
                 <td>react-native-autocomplete-input: Update broken API URL used in the app demo.</td>
                 <td><a href="https://github.com/byteburgers/react-native-autocomplete-input/pull/184">Link</a></td>
                 <td>merged</td>
-                <td>The demo was pulling from an outdated URL that was broken. I submitted a change with the updated URL.</td>
+                <td>The demo was pulling from an outdated URL that was broken. I submitted an updated change.</td>
             </tr>
             <tr>
                 <td>curveball: Added ability to handle multiple inputs by app.use().</td>
                 <td><a href="https://github.com/curveball/core/pull/98">Link</a></td>
                 <td>merged</td>
-                <td>This task was listed by the maintainer. I added rest parameters to the function input to make fulfil the task..</td>
+                <td>This task was listed as open. I submitted a PR with the updates.</td>
             </tr>
             <tr>
                 <td>freeCodeCamp: Updated lesson documentation to mention ES6 Javascript.</td>
