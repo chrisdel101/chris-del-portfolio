@@ -9,7 +9,7 @@ layout: default
         <a class="no-print" href="/chris-del-portfolio">
             <div class="cir icon">CD</div>
         </a>
-        <div class="no-print">An Compact, Printer-Frienly Explanation of my Experience</div>
+        <div class="no-print">An Compact, Printer-Friendly Explanation of my Experience</div>
         <input class="no-print" type="button" value="Print Resume" onClick="window.print()">
     </div>
     <div class="resume-content">
@@ -69,7 +69,7 @@ layout: default
                     <li>Web Application Development</li>
                     <li>Object Oriented Design</li>
                     <li>Public Speaking/Writing</li>
-                    <li>Ability to Work Unsupersived</li>
+                    <li>Ability to Work Unsupervised</li>
                     <li>Networks and Protocols</li>
                     <li>Open Source Contribution</li>
                 </ul>
