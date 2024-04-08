@@ -107,7 +107,6 @@ layout: default
             </div>
             <div id="intermediate-skills">
                 <h3>ADDITIONAL AREAS OF INTEREST</h3>
-            <p class="description">I've gained a fundamental understanding of these through either study or projects.</p>
                 <ul>
                     <li>Hardware and Robotics</li>
                     <li>Computer Graphics</li>
