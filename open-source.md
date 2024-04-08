@@ -25,7 +25,7 @@ layout: default
                 <td>react-data-table-component: Fix displaced page elements on project web site.</td>
                 <td><a href="https://github.com/jbetancur/react-data-table-component/pull/1036">Link</a></td>
                 <td>stale + unmerged</td>
-                <td>After seeing this bug I submitted the fix without consulation. The maintainers never acknowledged or merged it. No idea why. It fixed the issue.</td>
+                <td>After seeing this bug I submitted the fix without consultation. The maintainers never acknowledged or merged it. No idea why. It fixed the issue.</td>
             </tr>
             <tr>
                 <td>react-native-autocomplete-input: Update broken API URL used in the app demo.</td>

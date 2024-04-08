@@ -8,7 +8,7 @@ layout: default
         <a href="/chris-del-portfolio">
             <div class="cir icon">CD</div>
         </a>    
-        <div  class="resume-header complete-resume-header">An Indepth Explanation of my Experience</div>
+        <div  class="resume-header complete-resume-header">An In-Depth Explanation of my Experience</div>
     </div>  
     <div class="resume-content">
         <div class="resume-title">
@@ -55,7 +55,7 @@ layout: default
         </div>
         <div id="top-skills">
             <h3>TOP SKILLS</h3>
-            <p class="description">I have a proffesional working ability with all these skills. </p>
+            <p class="description">I have a professional working ability with all these skills. </p>
             <ul>
                 <li>Full-Stack Development</li>
                 <li>Front-End Development</li>
@@ -111,9 +111,9 @@ layout: default
                 <ul>
                     <li>Hardware and Robotics</li>
                     <li>Computer Graphics</li>
-                    <li>Cryptopgraphy</li>
+                    <li>Cryptography</li>
                     <li>Networks and Protocols</li>
-                    <li>Mobile Developement</li>
+                    <li>Mobile Development</li>
                 </ul>
             </div>
             {% include education.html %}
