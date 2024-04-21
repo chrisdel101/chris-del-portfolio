@@ -32,19 +32,34 @@ site.target | prepend: 'target="' | append: '"' -%}
       forloop.last -%} {{ comma }} {%- endunless %}
     </p>
     {% endif -%} {%- endfor -%} ] {%- elsif pair.value.first -%} {{ quote
-    }}<span class="key">{{ pair.key }}</span>{{ quote }}: [ {% for value in
-    pair.value -%} {% if value.url -%}
-    <p class="ms">
-      {{ quote }}<a class="value" href="{{ value.url }}" {{ target }}
-        >{{ value.value }}</a
-      >{{ quote }} {%- unless forloop.last -%} {{ comma }} {%- endunless %}
-    </p>
+    }}<span class="key">{{ pair.key }}</span>{{ quote }}: 
+    [ {% for value in
+      pair.value -%} {% if value.url -%} 
+      {% if pair.key == "my resumes" %}
+      {{jekyll.environment}}
+        {% if jekyll.environment != "development" %}
+          <p class="ms">
+            {{ quote }}<a class="value" href="chris-del-portfolio{{ value.url }}" {{ target }}
+              >{{ value.value }}</a
+            >{{ quote }} {%- unless forloop.last -%} {{ comma }} {%- endunless %}
+          </p>
+        {% else %}
+        <p class="ms">
+          {{ quote }}<a class="value" href="{{ value.url }}" {{ target }}
+            >{{ value.value }}</a
+          >{{ quote }} {%- unless forloop.last -%} {{ comma }} {%- endunless %}
+        </p>
+        {% endif %}
+      {% endif %}
+
+       
     {% else -%}
     <p class="ms">
       {{ quote }}<span class="value">{{ value }}</span>{{ quote }} {%- unless
       forloop.last -%} {{ comma }} {%- endunless %}
     </p>
-    {% endif -%} {%- endfor -%} ] {%- elsif pair.url -%} {{ quote }}<span
+    {% endif -%} {%- endfor -%} ] 
+    {%- elsif pair.url -%} {{ quote }}<span
       class="key"
       >{{ pair.key }}</span
     >{{ quote }}: {{ quote }}<a class="value" href="{{ pair.url }}" {{ target }}
