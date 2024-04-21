@@ -18,7 +18,7 @@ site.target | prepend: 'target="' | append: '"' -%}
     {{ quote }}<span class="key">{{ pair.key }}</span>{{ quote }}: {{ quote
     }}<span class="value"><span id="typed"></span></span>{{ quote }} {%- elsif
     pair.value.first.key -%} {{ quote }}<span class="key">{{ pair.key }}</span
-    >{{ quote }}: [ {% for value in pair.value -%} {% if value.url -%}
+    >{{ quote }} : [ {% for value in pair.value -%} {% if value.url -%}
     <p class="ms">
       {{ quote }}<span class="key">{{ value.key }}</span>{{ quote }}: {{ quote
       }}<a class="value" href="{{ value.url }}" {{ target }}
@@ -35,25 +35,21 @@ site.target | prepend: 'target="' | append: '"' -%}
     }}<span class="key">{{ pair.key }}</span>{{ quote }}: 
     [ {% for value in
       pair.value -%} {% if value.url -%} 
-      {% if pair.key == "my resumes" %}
-      {{jekyll.environment}}
-        {% if jekyll.environment != "development" %}
-          <p class="ms">
-            {{ quote }}<a class="value" href="chris-del-portfolio{{ value.url }}" {{ target }}
-              >{{ value.value }}</a
-            >{{ quote }} {%- unless forloop.last -%} {{ comma }} {%- endunless %}
-          </p>
-        {% else %}
-        <p class="ms">
-          {{ quote }}<a class="value" href="{{ value.url }}" {{ target }}
-            >{{ value.value }}</a
-          >{{ quote }} {%- unless forloop.last -%} {{ comma }} {%- endunless %}
-        </p>
-        {% endif %}
-      {% endif %}
-
-       
+        {% if pair.key == "my resumes" %}
+            <p class="ms">
+                {{ quote }}<a class="value" href="{{site.baseurl}}{{ value.url }}" {{ target }}
+                >{{ value.value }}</a
+                >{{ quote }} {%- unless forloop.last -%} {{ comma }} {%- endunless %}
+            </p> 
+        {% else -%}
+            <p class="ms">
+                {{ quote }}<a class="value" href="{{ value.url }}" {{ target }}
+                >{{ value.value }}</a
+                >{{ quote }} {%- unless forloop.last -%} {{ comma }} {%- endunless %}
+            </p> 
+        {% endif -%}
     {% else -%}
+    
     <p class="ms">
       {{ quote }}<span class="value">{{ value }}</span>{{ quote }} {%- unless
       forloop.last -%} {{ comma }} {%- endunless %}
@@ -62,7 +58,8 @@ site.target | prepend: 'target="' | append: '"' -%}
     {%- elsif pair.url -%} {{ quote }}<span
       class="key"
       >{{ pair.key }}</span
-    >{{ quote }}: {{ quote }}<a class="value" href="{{ pair.url }}" {{ target }}
+    >{{ quote }}: {{ quote }}<a class="value" href="{{ site.baseurl}}{{ pair.url }}" {{ target }}
+    {}
       >{{ pair.value }}</a
     >{{ quote }} {%- else -%} {{ quote }}<span class="key">{{ pair.key }}</span
     >{{ quote }}: {{ quote }}<span class="value">{{ pair.value }}</span>{{ quote
