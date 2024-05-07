@@ -9,9 +9,7 @@ layout: default
             <div class="cir icon">CD</div>
         </a>
         <div>
-            I've made a few  very small contributions. Technically, I am still a contributor, right??
-            <br>
-            I'm always on the lookout for ways to contribute more.
+            I'd only made a few very small contributions over the years. Now I'm working with the ExpressJS documentation team and plan to contribute there regularly.
         </div>
     </div>
     <table>
@@ -20,6 +18,18 @@ layout: default
                 <th>Link</th>
                 <th>Status</th>
                 <th>Description</th>
+            </tr>
+            <tr>
+                <td>expressjs.com: Added a dark mode theme to the site.</td>
+                <td><a href="https://github.com/expressjs/expressjs.com/pull/1490">Link</a></td>
+                <td>merged</td>
+                <td>After finding an abandoned PR for this issue, I took it over and implemented it. The results can be viewed online.</td>
+            </tr>
+            <tr>
+                <td>expressjs.com: Made small HTML fix to routing page.</td>
+                <td><a href="https://github.com/expressjs/expressjs.com/pull/1481">Link</a></td>
+                <td>merged</td>
+                <td>Changed a mid-page h3 to an h2 to make the page look more uniform.</td>
             </tr>
             <tr>
                 <td>react-data-table-component: Fix displaced page elements on project web site.</td>
