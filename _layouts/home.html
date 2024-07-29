@@ -35,7 +35,7 @@ site.target | prepend: 'target="' | append: '"' -%}
     }}<span class="key">{{ pair.key }}</span>{{ quote }}: 
     [ {% for value in
       pair.value -%} {% if value.url -%} 
-        {% if pair.key == "my resumes" %}
+        {% if pair.key == "experience" %}
             <p class="ms">
                 {{ quote }}<a class="value" href="{{site.baseurl}}{{ value.url }}" {{ target }}
                 >{{ value.value }}</a
