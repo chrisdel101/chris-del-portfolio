@@ -9,9 +9,7 @@ layout: default
             <div class="cir icon">CD</div>
         </a>
         <div>
-            I've made a few  very small contributions. Technically, I am still a contributor, right??
-            <br>
-            I'm always on the lookout for ways to contribute more.
+            I'd only made a few very small contributions over the years. Now I'm working with the ExpressJS documentation team and plan to contribute there regularly.
         </div>
     </div>
     <table>
