@@ -12,7 +12,7 @@
       url: /work-history
     - value: Work history --printer-friendly
       url: /work-history-compact
-    - value: pdf --standard
+    - value: resume
       url: /resume.pdf
 - key: work
   value: /work
