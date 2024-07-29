@@ -3,12 +3,27 @@
   <div class="job-detail">
     <p><strong>Software & Hardware Development Intern</strong></p>
     <p>Lytehorse Labs | May 2022 - Aug 2022 | Regina, SK</p>
+    <p>The company's flagship product was an electric ATV so they wanted a dynamometer for testing. My job was to make said dyno run. This meant developing custom software to run the project hardware.</p>
+    <p>This was a dream project - working with software, hardware and electrical elements. It was a great experience getting to be work with so many pieces of technology.</p>
+    <p>Since I was the only developer on the project I had to make nearly all project decisions independently:
+      <ul>
+        <li>
+          How to structure the code
+        </li>
+        <li>  
+          How to setup the GUI for user interaction
+        </li>
+        <li>
+          How to integrate safety features
+        </li>
+        <li>And more....</li>
+      </ul> 
+    </p>
+    <p>The machine's construction was a solid metal frame inset with four 12 inch rollers that the vehicle sat on top of. Each roller was connected to an electric motor for drive, brake, and torque/HP testing. The motors connected to Kelly motor controllers, which then connected to an Arduino. This was our way to commuicate.
+    </p>
+    <p>On the user's end, a python program used our custom UART-based protocol to send and receive communications over serial. We used a <a href="https://www.pjrc.com/store/teensy41_pins.html">Teensy</a> microntroller since it has eight serial ports, and recieved asynchronous communication from both directions.
+    </p>
     <ul>
-      <li>
-        As the single developer in charge of this project, my overall job was to
-        develop software to run a custom built dynamometer for use in testing
-        the company’s flagship electric ATV.
-      </li>
       <li>Primary task #1 was to develop native software using Python.</li>
       <ul>
         <li>

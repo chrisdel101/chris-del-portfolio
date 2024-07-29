@@ -19,7 +19,19 @@ main {
 .resume-container {
   overflow-y: scroll;
 }
+#resume-Languages p:first-of-type {
+  margin-bottom: 10px;
 
+}
+/* indent narrative tpext */
+#work-experience .job-detail  p:nth-child(n+3) {
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+/* space narrative text */
+#work-experience .job-detail  p:nth-child(n+2) {
+  margin-bottom: 10px;
+}
 .open-source-container,
 .work-container {
   text-align: center;

@@ -6,12 +6,12 @@
     - this is my porfolio
     - click a link below
   typed: true
-- key: my resumes
+- key: experience
   value:
-    - value: html --verbose
-      url: /resume-complete
-    - value: html --output=printer-friendly
-      url: /resume-compact
+    - value: Work history --verbose
+      url: /work-history
+    - value: Work history --printer-friendly
+      url: /work-history-compact
     - value: pdf --standard
       url: /resume.pdf
 - key: work

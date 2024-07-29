@@ -17,7 +17,8 @@ layout: default
         </div>
         <div id="resume-Languages">
             <h3>TOP LANGUAGES</h3>
-            <p class="description">I possess a professional-level working knowledge of these languages, their ecosystems, and their major frameworks.</p>
+            <p><strong>Level:</strong>Professional</p>
+            <p class="description">I've worked with these for more than five years and have logged over 10000 hours of exeprience.</p>
             <table>
                 <tr>
                     <th>Language</th>
@@ -55,7 +56,6 @@ layout: default
         </div>
         <div id="top-skills">
             <h3>TOP SKILLS</h3>
-            <p class="description">I have a professional working ability with all these skills. </p>
             <ul>
                 <li>Full-Stack Development</li>
                 <li>Front-End Development</li>

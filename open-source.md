@@ -22,6 +22,24 @@ layout: default
                 <th>Description</th>
             </tr>
             <tr>
+                <td>expressjs.com: Add blog feature to site.</td>
+                <td><a href="https://github.com/expressjs/expressjs.com/pull/1519">Link</a></td>
+                <td>merged</td>
+                <td>Add support for blogging section of the website.</td>
+            </tr>
+            <tr>
+                <td>expressjs.com: Add dark mode to site.</td>
+                <td><a href="https://github.com/expressjs/expressjs.com/pull/1490">Link</a></td>
+                <td>merged</td>
+                <td>Add support for dark theme. Check user system preferences, and utilizes local storage for persistence.</td>
+            </tr>
+            <tr>
+                <td>expressjs.com: Update routing.md.</td>
+                <td><a href="https://github.com/expressjs/expressjs.com/pull/1481">Link</a></td>
+                <td>merged</td>
+                <td>Extremely small fix: changed  h3 tag to an h2 tag.</td>
+            </tr>
+            <tr>
                 <td>react-data-table-component: Fix displaced page elements on project web site.</td>
                 <td><a href="https://github.com/jbetancur/react-data-table-component/pull/1036">Link</a></td>
                 <td>stale + unmerged</td>
