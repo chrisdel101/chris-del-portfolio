@@ -3,7 +3,7 @@ layout: page
 ---
 <div class="page-container work-container">
     <div class="work-heading">
-        <h2>Work Examples</h2>
+        <h2>Personal Projects</h2>
         <a href="/chris-del-portfolio">
             <div class="cir icon">CD</div>
         </a>

@@ -6,15 +6,15 @@
     - this is my porfolio
     - click a link below
   typed: true
-- key: experience
+- key: work history
   value:
-    - value: Work history --verbose
+    - value: kitchen sink  --verbose
       url: /work-history
-    - value: Work history --printer-friendly
+    - value: the highlights --printer-friendly
       url: /work-history-compact
-    - value: resume
+    - value: resume --pdf
       url: /resume.pdf
-- key: work
+- key: projects
   value: /work
   url: /work
 - key: open source
