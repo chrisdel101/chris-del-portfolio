@@ -1,5 +1,5 @@
 ---
-layout: default  
+layout: page  
 ---
 <div class="page-container work-container">
     <div class="work-heading">

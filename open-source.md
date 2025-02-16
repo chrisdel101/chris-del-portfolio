@@ -1,6 +1,6 @@
 ---
 
-layout: default  
+layout: page  
 ---
 <div class="page-container open-source-container">
     <div class="open-source-heading">

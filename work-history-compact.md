@@ -1,6 +1,6 @@
 ---
 
-layout: default  
+layout: page  
   
 ---
 <section class="resume-container page-container">

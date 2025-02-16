@@ -1,6 +1,6 @@
 ---
 
-layout: default  
+layout: page  
 ---
 <section class="resume-container resume-complete page-container">
     <div class="resume-heading">
