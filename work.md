@@ -8,7 +8,7 @@ layout: page
             <div class="cir icon">CD</div>
         </a>
         <div>
-            A collection of various personal projects. 
+            These are personal projects I've created through the process of learning new technologies. 
         </div>
     </div>
     <div class="work-content">

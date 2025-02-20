@@ -56,13 +56,32 @@ layout: page
         </div>
         <div id="top-skills">
             <h3>TOP SKILLS</h3>
+            <p class="description">My top professional skills</p>
             <ul>
-                <li>Full-Stack Development</li>
-                <li>Front-End Development</li>
-                <li>Back-End Development</li>
                 <li>Creative Problem Solving</li>
-                <li>Web Application Development</li>
-                <li>Object Oriented Design</li>
+                <ul>
+                    <li>Taking problems statements and delivering shippable solutions.</li>
+                    <li>Adding Automation for repetitive or lengthy tasks.</li>
+                    <li>Manipulating source code, versioning, environments, operating systems, etc. - whatever it takes to find solutions. </li>
+                </ul>
+                <li>Full-Stack Web Development</li>
+                    <ul>
+                        <li>Equally capable on both ends of the stack.</li>
+                    </ul>
+                <li>Software Development</li>
+                <ul>
+                    <li>Solutions for desktop, mobile, and Arduino.</li>
+                </ul>
+                <li>Language Agnosticism </li>
+                    <ul>
+                        <li>Enjoy exploring different languages and paradigms.</li>
+                        <li>Experimenting with different tools </li>
+                    </ul>
+                <li>Architecture and Design</li>
+                    <ul>
+                        <li>Attracted to functional programming and declarative operations</li>
+                        <li>Observant of software design patterns like observer, factory, decorator, etc. </li>
+                    </ul>
                 <li>Public Speaking/Writing</li>
             </ul>
         </div>
