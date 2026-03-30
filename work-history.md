@@ -5,7 +5,7 @@ layout: page
 <section class="resume-container resume-complete page-container">
     <div class="resume-heading">
         <h2 class="resume-header complete-resume-header" >Resume Complete</h2>
-        <a href="/chris-del-portfolio">
+        <a href="{{ '/' | relative_url }}">
             <div class="cir icon">CD</div>
         </a>    
         <div  class="resume-header complete-resume-header">An In-Depth Explanation of my Experience</div>

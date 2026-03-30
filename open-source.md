@@ -5,7 +5,7 @@ layout: page
 <div class="page-container open-source-container">
     <div class="open-source-heading">
         <h2>Open Source Contributions</h2>
-        <a href="/chris-del-portfolio">
+        <a href="{{ '/' | relative_url }}">
             <div class="cir icon">CD</div>
         </a>
         <div>

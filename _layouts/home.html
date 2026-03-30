@@ -20,10 +20,17 @@ site.target | prepend: 'target="' | append: '"' -%}
     pair.value.first.key -%} {{ quote }}<span class="key">{{ pair.key }}</span
     >{{ quote }} : [ {% for value in pair.value -%} {% if value.url -%}
     <p class="ms">
+      {% if value.url contains '://' -%}
       {{ quote }}<span class="key">{{ value.key }}</span>{{ quote }}: {{ quote
       }}<a class="value" href="{{ value.url }}" {{ target }}
         >{{ value.value }}</a
       >{{ quote }} {%- unless forloop.last -%} {{ comma }} {%- endunless %}
+      {%- else -%}
+      {{ quote }}<span class="key">{{ value.key }}</span>{{ quote }}: {{ quote
+      }}<a class="value" href="{{ value.url | relative_url }}" {{ target }}
+        >{{ value.value }}</a
+      >{{ quote }} {%- unless forloop.last -%} {{ comma }} {%- endunless %}
+      {% endif -%}
     </p>
     {% else -%}
     <p class="ms">
@@ -31,25 +38,24 @@ site.target | prepend: 'target="' | append: '"' -%}
       }}<span class="value">{{ value.value }}</span>{{ quote }} {%- unless
       forloop.last -%} {{ comma }} {%- endunless %}
     </p>
+
     {% endif -%} {%- endfor -%} ] {%- elsif pair.value.first -%} {{ quote
-    }}<span class="key">{{ pair.key }}</span>{{ quote }}: 
+    }}<span class="key">{{ pair.key }}</span>{{ quote }}:
     [ {% for value in
-      pair.value -%} {% if value.url -%} 
-        {% if pair.key == "experience" %}
-            <p class="ms">
-                {{ quote }}<a class="value" href="{{site.baseurl}}{{ value.url }}" {{ target }}
-                >{{ value.value }}</a
-                >{{ quote }} {%- unless forloop.last -%} {{ comma }} {%- endunless %}
-            </p> 
-        {% else -%}
-            <p class="ms">
-                {{ quote }}<a class="value" href="{{ value.url }}" {{ target }}
-                >{{ value.value }}</a
-                >{{ quote }} {%- unless forloop.last -%} {{ comma }} {%- endunless %}
-            </p> 
-        {% endif -%}
+      pair.value -%} {% if value.url -%}
+    <p class="ms">
+      {% if value.url contains '://' -%}
+      {{ quote }}<a class="value" href="{{ value.url }}" {{ target }}
+        >{{ value.value }}</a
+      >{{ quote }}
+      {%- else -%}
+      {{ quote }}<a class="value" href="{{ value.url | relative_url }}" {{ target }}
+        >{{ value.value }}</a
+      >{{ quote }}
+      {%- endif %} {%- unless forloop.last -%} {{ comma }} {%- endunless %}
+    </p>
     {% else -%}
-    
+
     <p class="ms">
       {{ quote }}<span class="value">{{ value }}</span>{{ quote }} {%- unless
       forloop.last -%} {{ comma }} {%- endunless %}
@@ -58,8 +64,7 @@ site.target | prepend: 'target="' | append: '"' -%}
     {%- elsif pair.url -%} {{ quote }}<span
       class="key"
       >{{ pair.key }}</span
-    >{{ quote }}: {{ quote }}<a class="value" href="{{ site.baseurl}}{{ pair.url }}" {{ target }}
-    {}
+    >{{ quote }}: {{ quote }}<a class="value" href="{{ pair.url | relative_url }}" {{ target }}
       >{{ pair.value }}</a
     >{{ quote }} {%- else -%} {{ quote }}<span class="key">{{ pair.key }}</span
     >{{ quote }}: {{ quote }}<span class="value">{{ pair.value }}</span>{{ quote

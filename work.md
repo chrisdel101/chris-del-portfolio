@@ -4,7 +4,7 @@ layout: page
 <div class="page-container work-container">
     <div class="work-heading">
         <h2>Personal Projects</h2>
-        <a href="/chris-del-portfolio">
+        <a href="{{ '/' | relative_url }}">
             <div class="cir icon">CD</div>
         </a>
         <div>
