@@ -2,18 +2,21 @@
   value: 'Chris Del portfolio'
 - key: whoami
   value:
-    - i'm a developer
-    - this is my porfolio
-    - click a link below
+      - i'm a developer
+      - this is my porfolio
+      - click a link below
   typed: true
+- key: top skills & interests
+  value: /manifest
+  url: /manifest
 - key: work history
   value:
-    - value: kitchen sink  --verbose
-      url: /work-history
-    - value: the highlights --printer-friendly
-      url: /work-history-compact
-    - value: resume --pdf
-      url: /resume.pdf
+      - value: kitchen sink  --verbose
+        url: /changelog
+      - value: the highlights --printer-friendly
+        url: /work-history-compact
+      - value: resume --pdf
+        url: /resume.pdf
 - key: projects
   value: /work
   url: /work
@@ -22,13 +25,13 @@
   url: /open-source
 - key: Profiles
   value:
-    - value: LinkedIn
-      url: https://www.linkedin.com/in/chrisdel1/
-    - value: GitHub
-      url: https://github.com/chrisdel101
+      - value: LinkedIn
+        url: https://www.linkedin.com/in/chrisdel1/
+      - value: GitHub
+        url: https://github.com/chrisdel101
 - key: about
   value:
-    - key: Location
-      value: Regina, Canada
-    - key: Email
-      value: chrisde.tech9 at gmail
+      - key: Location
+        value: Regina, Canada
+      - key: Email
+        value: chrisde.tech9 at gmail
