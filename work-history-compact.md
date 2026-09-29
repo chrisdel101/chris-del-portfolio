@@ -1,8 +1,8 @@
 ---
-
-layout: page  
-  
+layout: page
+permalink: /changelog-work-history
 ---
+
 <section class="resume-container page-container">
     <div class="compact-resume-heading">
         <h2 class="resume-header no-print">Resume Compact</h2>
@@ -79,4 +79,5 @@ layout: page
         {% include education.html %}
 
     </div>
+
 </section>

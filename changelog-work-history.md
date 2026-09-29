@@ -1,7 +1,8 @@
 ---
-
-layout: page  
+layout: page
+# this is the work history pages
 ---
+
 <section class="resume-container resume-complete page-container">
     <div class="resume-heading">
         <h2 class="resume-header complete-resume-header" >Resume Complete</h2>
