@@ -3,7 +3,7 @@ https://chrisdel101.github.io/chris-del-portfolio
 
 ### Running
 
-The baseurl and url not work properly and so we need two configs. We need to run the dev config manually so that the main config can be set to run as is on github pages and not break.
+The baseurl and url do not work properly and so we need two configs. These are supposed to put the correct base URLS on dev and prod, but do not. We need to run the dev config manually so that the main config can be set to run as is on github pages and not break.
 
 __Local run__
 

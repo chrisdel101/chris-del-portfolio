@@ -56,12 +56,11 @@ layout: page
         </div>
         <div id="top-skills">
             <h3>TOP SKILLS</h3>
-            <p class="description">My top professional skills</p>
             <ul>
                 <li>Creative Problem Solving</li>
                 <ul>
-                    <li>Taking problems statements and delivering shippable solutions.</li>
-                    <li>Adding Automation for repetitive or lengthy tasks.</li>
+                    <li>Taking problems and delivering shippable solutions - sometimes given very brief problem descriptions.</li>
+                    <li>Creating automation for repetitive or lengthy tasks.</li>
                     <li>Manipulating source code, versioning, environments, operating systems, etc. - whatever it takes to find solutions. </li>
                 </ul>
                 <li>Full-Stack Web Development</li>
@@ -74,13 +73,13 @@ layout: page
                 </ul>
                 <li>Language Agnosticism </li>
                     <ul>
-                        <li>Enjoy exploring different languages and paradigms.</li>
-                        <li>Experimenting with different tools </li>
+                        <li>Comfortable working across languages and paradigms.</li>
+                        <li>Experimenting with different tools. </li>
                     </ul>
                 <li>Architecture and Design</li>
                     <ul>
-                        <li>Attracted to functional programming and declarative operations</li>
-                        <li>Observant of software design patterns like observer, factory, decorator, etc. </li>
+                        <li>Functional programming and declarative operations.</li>
+                        <li>Software design patterns such as observer, factory, decorator, etc. </li>
                     </ul>
                 <li>Public Speaking/Writing</li>
             </ul>
