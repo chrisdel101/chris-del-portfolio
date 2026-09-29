@@ -6,7 +6,7 @@
       - this is my porfolio
       - click a link below
   typed: true
-- key: top skills & interests
+- key: top skills, tech & interests
   value: /manifest
   url: /manifest
 - key: work history
