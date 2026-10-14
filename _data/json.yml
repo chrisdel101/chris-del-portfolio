@@ -9,14 +9,9 @@
 - key: top skills, tech & interests
   value: /manifest
   url: /manifest
-- key: work history
-  value:
-      - value: kitchen sink  --verbose
-        url: /changelog
-      - value: the highlights --printer-friendly
-        url: /work-history-compact
-      - value: resume --pdf
-        url: /resume.pdf
+- key: work history --verbose
+  value: /changelog 
+  url: /changelog
 - key: projects
   value: /work
   url: /work
