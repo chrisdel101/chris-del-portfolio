@@ -1,0 +1,129 @@
+<div id="work-experience">
+  <h3>TOP PROJECTS OVERVIEW</h3>
+  <div class="job-detail">
+    <div id="pi-esri-integrator">
+      <p><strong> Aveva PI API to Esri Integrator Desktop App </strong></p>
+      <p>Kvale Consulting | Project Dates: Jan 2026 - Oct 2026</p>
+      <p>
+        Since I was the only developer on the project I had had near final-cut
+        control:
+      </p>
+      <ul>
+        <li>How to structure the code</li>
+        <li>How to setup the GUI for user interaction</li>
+        <li>How to integrate safety features</li>
+        <li>And more....</li>
+      </ul>
+      <p>
+        The machine's construction was a solid metal frame inset with four 12
+        inch rollers that the vehicle sat on top of. These rollers were what ran
+        the machine and what made this a dyno.
+      </p>
+      <p>
+        Each roller was connected to an electric motor for drive, brake, and
+        torque/HP testing. The motors connected to Kelly motor controllers,
+        which then connected to an Arduino. This was our way to commuicate.
+      </p>
+      <p>
+        On the user's end, a python program used our custom UART-based protocol
+        to send and receive communications over serial. We used a
+        <a href="https://www.pjrc.com/store/teensy41_pins.html">Teensy</a>
+        microntroller since it has eight serial ports, and recieved asynchronous
+        communication from both directions.
+      </p>
+      <ul>
+        <li>
+          Primary task #1 was to develop native software using Python.
+          <ul>
+            <li>
+              Using serial protocol, Python signalled Arduino. Arduino then
+              signalled electric motor controllers on the machine.
+            </li>
+            <li>
+              Tools used included TKinter for GUI; multi-threading and TCP
+              socket APIs for asynchronous communication.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Primary task #2 was to develop logic for Arduino microcontroller in C
+          language. This handled communication between user and machine using
+          serial.
+          <ul>
+            <li>
+              Two-way serial communication meant Arduino accepted input from
+              both Python and motor controller systems simultaneously.
+            </li>
+            <li>
+              Arduino signal directions: received serial input from Python,
+              received serial input from motor controller, sent out appropriate
+              serial output responses.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="job-detail">
+    <div id="lytehorse-dyno">
+      <p>
+        Since I was the only developer on the project I had had near final-cut
+        control:
+      </p>
+      <ul>
+        <li>How to structure the code</li>
+        <li>How to setup the GUI for user interaction</li>
+        <li>How to integrate safety features</li>
+        <li>And more....</li>
+      </ul>
+      <p>
+        The machine's construction was a solid metal frame inset with four 12
+        inch rollers that the vehicle sat on top of. These rollers were what ran
+        the machine and what made this a dyno.
+      </p>
+      <p>
+        Each roller was connected to an electric motor for drive, brake, and
+        torque/HP testing. The motors connected to Kelly motor controllers,
+        which then connected to an Arduino. This was our way to commuicate.
+      </p>
+      <p>
+        On the user's end, a python program used our custom UART-based protocol
+        to send and receive communications over serial. We used a
+        <a href="https://www.pjrc.com/store/teensy41_pins.html">Teensy</a>
+        microntroller since it has eight serial ports, and recieved asynchronous
+        communication from both directions.
+      </p>
+      <ul>
+        <li>
+          Primary task #1 was to develop native software using Python.
+          <ul>
+            <li>
+              Using serial protocol, Python signalled Arduino. Arduino then
+              signalled electric motor controllers on the machine.
+            </li>
+            <li>
+              Tools used included TKinter for GUI; multi-threading and TCP
+              socket APIs for asynchronous communication.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Primary task #2 was to develop logic for Arduino microcontroller in C
+          language. This handled communication between user and machine using
+          serial.
+          <ul>
+            <li>
+              Two-way serial communication meant Arduino accepted input from
+              both Python and motor controller systems simultaneously.
+            </li>
+            <li>
+              Arduino signal directions: received serial input from Python,
+              received serial input from motor controller, sent out appropriate
+              serial output responses.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

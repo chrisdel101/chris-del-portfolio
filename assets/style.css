@@ -78,7 +78,7 @@ main {
     color: black;
     padding: 5px;
 }
-.work-project a {
+.work-project a, .job-detail a {
     color: #0000ff;
 }
 .page-container {

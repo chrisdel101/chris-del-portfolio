@@ -1,6 +1,5 @@
 ---
 layout: page
-permalink: /changelog
 # this is the work history pages
 ---
 
@@ -17,7 +16,7 @@ permalink: /changelog
             <h2>Chris Dielschnieder</h2>
             <h4>SOFTWARE DEVELOPER</h4>
         </div>
-            {% include work_experience.html %}
+            {% include work-experience.html %}
             {% include education.html %}
     </div>
 </section>
