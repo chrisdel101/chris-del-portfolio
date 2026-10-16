@@ -5,7 +5,7 @@ layout: page
 
 <section class="manifest-container page-container">
     <div class="compact-resume-heading">
-        <h2 class="resume-header no-print">Skills and Abilities Manifest</h2>
+        <h2 class="work-related-header no-print">Skills and Abilities Manifest</h2>
         <a class="no-print" href="{{ '/' | relative_url }}">
             <div class="cir icon">CD</div>
         </a>

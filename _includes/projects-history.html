@@ -2,128 +2,236 @@
   <h3>TOP PROJECTS OVERVIEW</h3>
   <div class="job-detail">
     <div id="pi-esri-integrator">
-      <p><strong> Aveva PI API to Esri Integrator Desktop App </strong></p>
-      <p>Kvale Consulting | Project Dates: Jan 2026 - Oct 2026</p>
+      <h3><strong> Aveva PI API to Esri Integrator Desktop App </strong></h3>
+      <h4>Kvale Consulting | Project Dates: Jan 2026 - Oct 2026</h4>
       <p>
-        Since I was the only developer on the project I had had near final-cut
-        control:
+        <strong>TL;DR</strong> It builds background worker processes running on
+        timed intervals, fetches data from a source API, and sends it to a
+        target API.
       </p>
-      <ul>
-        <li>How to structure the code</li>
-        <li>How to setup the GUI for user interaction</li>
-        <li>How to integrate safety features</li>
-        <li>And more....</li>
-      </ul>
+      <hr />
       <p>
-        The machine's construction was a solid metal frame inset with four 12
-        inch rollers that the vehicle sat on top of. These rollers were what ran
-        the machine and what made this a dyno.
+        This was a project started from scratch, and I wasn't given much. Just a few rough project parameters, a few suggestions about what would be nice to have, and told to get to work. So I came up with a plan to reseearch until I could out down some anchor points.
       </p>
-      <p>
-        Each roller was connected to an electric motor for drive, brake, and
-        torque/HP testing. The motors connected to Kelly motor controllers,
-        which then connected to an Arduino. This was our way to commuicate.
-      </p>
-      <p>
-        On the user's end, a python program used our custom UART-based protocol
-        to send and receive communications over serial. We used a
-        <a href="https://www.pjrc.com/store/teensy41_pins.html">Teensy</a>
-        microntroller since it has eight serial ports, and recieved asynchronous
-        communication from both directions.
-      </p>
-      <ul>
+      <p></p>
+      <ol>
         <li>
-          Primary task #1 was to develop native software using Python.
-          <ul>
-            <li>
-              Using serial protocol, Python signalled Arduino. Arduino then
-              signalled electric motor controllers on the machine.
-            </li>
-            <li>
-              Tools used included TKinter for GUI; multi-threading and TCP
-              socket APIs for asynchronous communication.
-            </li>
-          </ul>
+          <a href="#fn-req">Functional Requirements</a>: Create a design document outlining
+          requirements
         </li>
         <li>
-          Primary task #2 was to develop logic for Arduino microcontroller in C
-          language. This handled communication between user and machine using
-          serial.
+          <a href="#arch">Architechture</a>: Decide on monolithic vs client/server</li>
+        <li>
+          <a href="#tech-stack">Tech Stack</a>: Choose languages and frameworks
+        </li>
+        <li>
+          Database: Crete ERD diagrams for database tables for then unknown database type - MsSQL is eventual  chosen database
+        </li>
+        <li>
+          <a href="#dep-and-prod">Deployment and Production</a>: Consider how the production enviroment will
+          work
+        </li>
+      </ol>
+      <div id="fn-req">
+        <h4>Functional Requirements</h4>
+        <ul>
+          <li>
+            Primary task #1 - Fetch PI web API JSON data on timed intervals
+            <ul>
+              <li>
+                Show the user all available JSON assets and make them fetchable.
+              </li>
+              <li>
+                Allow the user to select the data they want and save the choices
+                as run settings.
+              </li>
+              <li>
+                Activate the run settings on timed intervals. Run the intervals
+                as background tasks.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Primary task #2 - Shape the JSON payload and send to target
+            <ul>
+              <li>
+                Allow user to choose from list of targets where to send the
+                payload.
+              </li>
+              <li>
+                Clean, flatten, and process PI API data to match shape of chosen
+                target. Send the payload.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="arch">
+        <h4>Architechure</h4>
+        <p>The decision was then to choose between two main designs:</p>
+        <ol>
+          <li>
+            Monolithic: Bundle all processing and operations together in a
+            single unit using C#
+          </li>
+          <li>
+            Client/server: Create seperate back and front ends using web
+            development technologies
+          </li>
+        </ol>
+        <p>
+          We chose #2. <em>Why?</em> Plain HTML/CSS is the way to go for complex
+          UI work.
+        </p>
+      </div>
+      <div id="tech-stack">
+        <h4>Tech Stack</h4>
+        <p>
+          Finally the fun part! Deciding which languages and frameworks to use.
+        </p>
+        <p>
+          Choosing the client/server design meant we were truthfully just
+          building a web app distguised as a desktop app - lets keep it all in
+          Typescript.
+        </p>
+        <ul>
+          <li>
+            Electron: C++ binary wrapper allowing us to run our frontend web
+            code natively.
+          </li>
           <ul>
             <li>
-              Two-way serial communication meant Arduino accepted input from
-              both Python and motor controller systems simultaneously.
-            </li>
-            <li>
-              Arduino signal directions: received serial input from Python,
-              received serial input from motor controller, sent out appropriate
-              serial output responses.
+              Runs a chromuim browser instance that steers the web development
+              code into C++
             </li>
           </ul>
-        </li>
-      </ul>
+          <li>
+            Fastify: NodeJS Express-like framework used to build our backend
+            REST API.
+            <ul>
+              <li>
+                Known for speedm which we need be being very background-task
+                heavy
+              </li>
+              <li>
+                Built-in APIs lile decorators and plugins keep things simple and
+                effienct by default
+              </li>
+            </ul>
+          </li>
+          <li>
+            VueJS: JS frameworks offer the best developer experience for
+            building UI.
+            <ul>
+              <li>
+                Advertised as the fastest of the virtual-dom frameworks, and
+                works well with Electron.
+              </li>
+            </ul>
+          </li>
+          <li>Prisma: Modern ORM handles database interaction</li>
+          <ul>
+            <li>
+              If we needed to support different databases we didn't want to
+              re-write our own SQL for each one.
+            </li>
+            <li>Prisma supports all the major databases</li>
+          </ul>
+            <li>
+              Primevue: Vue UI component design suite
+            </li>
+        </ul>
+      </div>
     </div>
+    <div id="dep-and-prod">
+        <h4>Deployment and Production</h4>
+        <p>
+          A requirement was that each instance be deployed individually to a
+          clients's server as an executable. In this single tenancy model each
+          instance of the app need be complely isolated behind a firewall or
+          proxy, making it inaccessbile from the open internet. Without
+          open-internet access we'd encounter fewer security threats, but it
+          meant the entire processing and database apparatus needed to be
+          created anew with each instance. The best packaging for user
+          experience seemed to obviously be a desktop app.
+        </p>
+      </div>
   </div>
   <div class="job-detail">
-    <div id="lytehorse-dyno">
+    <div id="pi-esri-integrator">
+      <h3><strong>DIY Dynamometer</strong></h3>
+      <p>Lytehorse | Project Dates: May 2022 - Aug 2022</p>
       <p>
-        Since I was the only developer on the project I had had near final-cut
-        control:
+        <strong>TL;DR</strong> It builds background worker processes running on
+        timed intervals, fetches data from a source API, and sends it to a
+        target API.
       </p>
-      <ul>
-        <li>How to structure the code</li>
-        <li>How to setup the GUI for user interaction</li>
-        <li>How to integrate safety features</li>
-        <li>And more....</li>
-      </ul>
+      <hr />
       <p>
-        The machine's construction was a solid metal frame inset with four 12
-        inch rollers that the vehicle sat on top of. These rollers were what ran
-        the machine and what made this a dyno.
+        I was given a few rough project parameters and a few words about what
+        would be nice to have, and told to get to work building. I started
+        thinkging about how.
       </p>
-      <p>
-        Each roller was connected to an electric motor for drive, brake, and
-        torque/HP testing. The motors connected to Kelly motor controllers,
-        which then connected to an Arduino. This was our way to commuicate.
-      </p>
-      <p>
-        On the user's end, a python program used our custom UART-based protocol
-        to send and receive communications over serial. We used a
-        <a href="https://www.pjrc.com/store/teensy41_pins.html">Teensy</a>
-        microntroller since it has eight serial ports, and recieved asynchronous
-        communication from both directions.
-      </p>
-      <ul>
-        <li>
-          Primary task #1 was to develop native software using Python.
-          <ul>
-            <li>
-              Using serial protocol, Python signalled Arduino. Arduino then
-              signalled electric motor controllers on the machine.
-            </li>
-            <li>
-              Tools used included TKinter for GUI; multi-threading and TCP
-              socket APIs for asynchronous communication.
-            </li>
-          </ul>
-        </li>
-        <li>
-          Primary task #2 was to develop logic for Arduino microcontroller in C
-          language. This handled communication between user and machine using
-          serial.
-          <ul>
-            <li>
-              Two-way serial communication meant Arduino accepted input from
-              both Python and motor controller systems simultaneously.
-            </li>
-            <li>
-              Arduino signal directions: received serial input from Python,
-              received serial input from motor controller, sent out appropriate
-              serial output responses.
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <div id="lytehorse-dyno">
+        <p>
+          Since I was the only developer on the project I had had near final-cut
+          control:
+        </p>
+        <ul>
+          <li>How to structure the code</li>
+          <li>How to setup the GUI for user interaction</li>
+          <li>How to integrate safety features</li>
+          <li>And more....</li>
+        </ul>
+        <p>
+          The machine's construction was a solid metal frame inset with four 12
+          inch rollers that the vehicle sat on top of. These rollers were what
+          ran the machine and what made this a dyno.
+        </p>
+        <p>
+          Each roller was connected to an electric motor for drive, brake, and
+          torque/HP testing. The motors connected to Kelly motor controllers,
+          which then connected to an Arduino. This was our way to commuicate.
+        </p>
+        <p>
+          On the user's end, a python program used our custom UART-based
+          protocol to send and receive communications over serial. We used a
+          <a href="https://www.pjrc.com/store/teensy41_pins.html">Teensy</a>
+          microntroller since it has eight serial ports, and recieved
+          asynchronous communication from both directions.
+        </p>
+        <ul>
+          <li>
+            Primary task #1 was to develop native software using Python.
+            <ul>
+              <li>
+                Using serial protocol, Python signalled Arduino. Arduino then
+                signalled electric motor controllers on the machine.
+              </li>
+              <li>
+                Tools used included TKinter for GUI; multi-threading and TCP
+                socket APIs for asynchronous communication.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Primary task #2 was to develop logic for Arduino microcontroller in
+            C language. This handled communication between user and machine
+            using serial.
+            <ul>
+              <li>
+                Two-way serial communication meant Arduino accepted input from
+                both Python and motor controller systems simultaneously.
+              </li>
+              <li>
+                Arduino signal directions: received serial input from Python,
+                received serial input from motor controller, sent out
+                appropriate serial output responses.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

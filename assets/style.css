@@ -6,17 +6,17 @@ main {
     align-items: center;
     width: 100%;
 }
-.resume-header,
+.work-related-header,
 .compact-resume-heading {
     text-align: center;
 }
 .compact-resume-heading > div {
     margin-bottom: 10px;
 }
-.resume-container h3 {
+.work-related-container h3 {
     text-align: center;
 }
-.resume-container,
+.work-related-container,
 .manifest-container {
     overflow-y: scroll;
 }
@@ -83,7 +83,7 @@ main {
 }
 .page-container {
     width: 80%;
-    max-width: 1200px;
+    max-width: 1200px;  
     margin: auto;
 }
 .resume-content {
