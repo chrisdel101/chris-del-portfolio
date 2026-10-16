@@ -17,6 +17,5 @@ layout: page
             <h4>SOFTWARE DEVELOPER</h4>
         </div>
             {% include projects-history.html %}
-            {% include education.html %}
     </div>
 </section>

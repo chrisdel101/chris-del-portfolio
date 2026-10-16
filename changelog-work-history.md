@@ -4,7 +4,7 @@ layout: page
 ---
 
 <section class="work-related-container page-container">
-    <div class="resume-heading">
+    <div class="page-heading">
         <h2 class="work-related-header" >Changelog</h2>
         <a href="{{ '/' | relative_url }}">
             <div class="cir icon">CD</div>

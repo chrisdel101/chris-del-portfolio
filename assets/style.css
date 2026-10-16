@@ -6,14 +6,20 @@ main {
     align-items: center;
     width: 100%;
 }
+ol > li {
+    margin: 10px 0;
+}
+li {
+    margin: 5px 0;
+}
 .work-related-header,
-.compact-resume-heading {
+.page-heading {
     text-align: center;
 }
-.compact-resume-heading > div {
+.page-heading > div {
     margin-bottom: 10px;
 }
-.work-related-container h3 {
+.content-title {
     text-align: center;
 }
 .work-related-container,
@@ -24,13 +30,13 @@ main {
     margin-bottom: 10px;
 }
 /* indent narrative tpext */
-#work-experience .job-detail p:nth-child(n + 3) {
+#project-experience .job-detail p:nth-child(n + 3) {
     margin-left: 15px;
     margin-bottom: 10px;
 }
 /* space narrative text */
-#work-experience .job-detail p:nth-child(n + 2) {
-    margin-bottom: 10px;
+ .job-detail p {
+    margin: 10px 0;
 }
 .open-source-container,
 .work-container {
@@ -61,8 +67,8 @@ main {
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-.resume-heading,
-.compact-resume-heading {
+.page-heading,
+.page-heading {
     margin-bottom: 5px;
 }
 .work-project {
