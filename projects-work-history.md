@@ -4,12 +4,12 @@ layout: page
 ---
 
 <section class="work-related-container page-container">
-    <div class="resume-heading">
+    <div class="page-heading">
         <h2 class="work-related-header" >Project History</h2>
         <a href="{{ '/' | relative_url }}">
             <div class="cir icon">CD</div>
         </a>    
-        <div  class="work-related-header">A Verbose Overview of Top Work Projects</div>
+        <div>A Verbose Project Overview</div>
     </div>  
     <div class="resume-content">
         <div class="resume-title">

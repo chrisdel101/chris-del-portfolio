@@ -9,11 +9,11 @@
 - key: top skills, tech & interests
   value: /manifest
   url: /manifest
-- key: work history
+- key: profesional stuff
   value:
       - value: work history  
         url: /work-history
-      - value: projects --verbose
+      - value: work projects --verbose
         url: /projects-work-history
       - value: resume --pdf
         url: /resume.pdf
