@@ -11,8 +11,8 @@
   url: /manifest
 - key: work history
   value:
-      - value: changelog  
-        url: /changelog-work-history
+      - value: work history  
+        url: /work-history
       - value: projects --verbose
         url: /projects-work-history
       - value: resume --pdf

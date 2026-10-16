@@ -29,14 +29,12 @@ li {
 #resume-Languages p:first-of-type {
     margin-bottom: 10px;
 }
-/* indent narrative tpext */
-#project-experience .job-detail p:nth-child(n + 3) {
-    margin-left: 15px;
-    margin-bottom: 10px;
+.tldr {
+    border-bottom: 1px silver solid;
 }
 /* space narrative text */
  .job-detail p {
-    margin: 10px 0;
+    padding: 10px;
 }
 .open-source-container,
 .work-container {

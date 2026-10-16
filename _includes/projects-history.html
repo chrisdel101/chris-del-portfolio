@@ -1,35 +1,41 @@
 <div id="project-experience" class="work-related-content">
   <h3 class="content-title">TOP PROJECTS OVERVIEW</h3>
+  <hr />
   <div class="job-detail">
     <div id="pi-esri-integrator">
       <h3>Aveva PI API to Esri Integrator Desktop App</h3>
       <h4>Kvale Consulting | Project Dates: Jan 2026 - Oct 2026</h4>
-      <p>
+      <p class="tldr">
         <strong>TL;DR</strong> It builds background worker processes running on
         timed intervals, fetches data from a source API, and sends it to a
         target API.
       </p>
-      <hr />
       <p>
-        This was a project started from scratch, and I wasn't given much. Just a few rough project parameters, a few suggestions about what would be nice to have, and told to get to work. So I came up with a plan to reseearch until I could out down some anchor points.
+        This was a project started from scratch, and I wasn't given much. Just a
+        few rough project parameters, a few suggestions about what would be nice
+        to have, and told to get to work. So I came up with a plan to reseearch
+        until I could out down some anchor points.
       </p>
       <p></p>
       <ol>
         <li>
-          <a href="#fn-req">Functional Requirements</a>: Create a design document outlining
-          requirements
+          <a href="#fn-req">Functional Requirements</a>: Create a design
+          document outlining requirements
         </li>
         <li>
-          <a href="#arch">Architechture</a>: Decide on monolithic vs client/server</li>
+          <a href="#arch">Architechture</a>: Decide on monolithic vs
+          client/server
+        </li>
         <li>
           <a href="#tech-stack">Tech Stack</a>: Choose languages and frameworks
         </li>
         <li>
-          Database: Crete ERD diagrams for database tables for then unknown database type - MsSQL is eventual  chosen database
+          Database: Crete ERD diagrams for database tables for then unknown
+          database type - MsSQL is eventual chosen database
         </li>
         <li>
-          <a href="#dep-and-prod">Deployment and Production</a>: Consider how the production enviroment will
-          work
+          <a href="#dep-and-prod">Deployment and Production</a>: Consider how
+          the production enviroment will work
         </li>
       </ol>
       <div id="fn-req">
@@ -137,40 +143,40 @@
             </li>
             <li>Prisma supports all the major databases</li>
           </ul>
-            <li>
-              Primevue: Vue UI component design suite
-            </li>
+          <li>Primevue: Vue UI component design suite</li>
         </ul>
       </div>
     </div>
     <div id="dep-and-prod">
-        <h4>Deployment and Production</h4>
-        <p>
-          A requirement was that each instance be deployed individually to a
-          clients's server as an executable. In this single tenancy model each
-          instance of the app need be complely isolated behind a firewall or
-          proxy, making it inaccessbile from the open internet. Without
-          open-internet access we'd encounter fewer security threats, but it
-          meant the entire processing and database apparatus needed to be
-          created anew with each instance. The best packaging for user
-          experience seemed to obviously be a desktop app.
-        </p>
-      </div>
+      <h4>Deployment and Production</h4>
+      <p>
+        Most of the reasoning behind all the previous decisions was related to
+        how this application would be deployed –- on a client's server isolated
+        behind a firewall or proxy, making it inaccessbile from the open
+        internet.
+      </p>
+      <p>
+        In this single tenancy model each installation needs to provide the
+        entire processing and database apparatus needed for all app operations.
+        Every deployment is a seperate isolated instance.
+      </p>
+      <p>
+        Shipping the frontend Electron side is pretty standard. The challenge is
+        the Fastify backend. Is ships as an execuatable wrapped by some C#
+        making it runnable as a windows service. The client must bring their own
+        MsSQL database.
+      </p>
+    </div>
   </div>
+  <hr />
   <div class="job-detail">
     <div id="pi-esri-integrator">
       <h3>DIY Dynamometer</h3>
       <h4>Lytehorse | Project Dates: May 2022 - Aug 2022</h4>
-      <p>
-        <strong>TL;DR</strong> It builds background worker processes running on
-        timed intervals, fetches data from a source API, and sends it to a
-        target API.
-      </p>
-      <hr />
-      <p>
-        I was given a few rough project parameters and a few words about what
-        would be nice to have, and told to get to work building. I started
-        thinkging about how.
+      <p class="tldr">
+        <strong>TL;DR</strong> Vehicle dynamometers start at around $25,000.
+        Using off-the-shelf components the goal was to build one ourselves for a
+        small fraction.
       </p>
       <div id="lytehorse-dyno">
         <p>
@@ -185,8 +191,7 @@
         </ul>
         <p>
           The machine's construction was a solid metal frame inset with four 12
-          inch rollers that the vehicle sat on top of. These rollers were what
-          ran the machine and what made this a dyno.
+          inch rollers use to move the mounted vehicle - essentially these are what made this a dyno.
         </p>
         <p>
           Each roller was connected to an electric motor for drive, brake, and
