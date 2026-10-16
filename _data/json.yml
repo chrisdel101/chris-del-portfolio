@@ -3,13 +3,13 @@
 - key: whoami
   value:
       - i'm a developer
-      - this is my porfolio
+      - this is my portfolio
       - click a link below
   typed: true
-- key: top skills, tech & interests
+- key: skills & interests
   value: /manifest
   url: /manifest
-- key: profesional stuff
+- key: professional stuff  
   value:
       - value: work history  
         url: /work-history

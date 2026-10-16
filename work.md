@@ -14,7 +14,7 @@ layout: page
     <div class="work-content">
         <div class="work-project">
             <div>
-                <a href="https://hackernews-whosehiring.vercel.app/2024/3">Hacker News Whose Hiring</a>
+                <a href="https://hackernews-whosehiring.vercel.app/2024/3">Hacker News Who's Hiring</a>
             </div>
             <div>
                 About: An easy to search take on the "Who's Hiring" thread from Hacker News. Built 2024.  
@@ -34,7 +34,7 @@ layout: page
                 <a href="https://chrisdel101.github.io/reactFormBuilder/">React Form Builder</a>
             </div>
             <div>
-                About: A very simple live form demonstration in React. Build 2019.  
+                About: A very simple live form demonstration in React. Built 2019.  
             </div>
             <div>
                 Code: <a href="https://github.com/chrisdel101/reactFormBuilder">Link</a>
@@ -51,7 +51,7 @@ layout: page
                 <a href="https://chrisdel101.github.io/hackernews/#/">Hacker News Clone</a>
             </div>
             <div>
-                About: A clone of Hacker News. Built 2018 (some features may longer work). 
+                About: A clone of Hacker News. Built 2018 (some features may no longer work). 
             </div>
             <div>
                 Code: <a href="https://github.com/chrisdel101/hackernews">Link</a>
@@ -102,7 +102,7 @@ layout: page
                 F1 Web App
             </div>
             <div>
-                About: Consumes F1 Stats Scraper API json and builds baseball-style cards for Formula 1. Build 2019.
+                About: Consumes F1 Stats Scraper API json and builds baseball-style cards for Formula 1. Built 2019.
             </div>
             <div>
                 Code: <a href="https://github.com/chrisdel101/f1-web">Link</a>
@@ -119,10 +119,10 @@ layout: page
                 Place Puppy (2018-2023)
             </div>
             <div>
-                About: Call an endpoint, get a puppy. Images were used as placeholders in development,or wherever.
+                About: Call an endpoint, get a puppy. Images were used as placeholders in development, or wherever.
             </div>
             <div>
-                Code: <a href="https://github.com/chrisdel101/place-puppy   ">Link</a>
+                Code: <a href="https://github.com/chrisdel101/place-puppy">Link</a>
             </div>
             <div>
                 Tech: Node, Express

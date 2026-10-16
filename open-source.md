@@ -29,13 +29,13 @@ layout: page
                 <td>expressjs.com: Add dark mode to site.</td>
                 <td><a href="https://github.com/expressjs/expressjs.com/pull/1490">Link</a></td>
                 <td>merged</td>
-                <td>Add support for dark theme. Check user system preferences, and utilizes local storage for persistence.</td>
+                <td>Add support for dark theme. Checks user system preferences, and utilizes local storage for persistence.</td>
             </tr>
             <tr>
                 <td>expressjs.com: Update routing.md.</td>
                 <td><a href="https://github.com/expressjs/expressjs.com/pull/1481">Link</a></td>
                 <td>merged</td>
-                <td>Extremely small fix: changed  h3 tag to an h2 tag.</td>
+                <td>Extremely small fix: changed h3 tag to an h2 tag.</td>
             </tr>
             <tr>
                 <td>react-data-table-component: Fix displaced page elements on project web site.</td>

@@ -13,8 +13,8 @@
       <p>
         This was a project started from scratch, and I wasn't given much. Just a
         few rough project parameters, a few suggestions about what would be nice
-        to have, and told to get to work. So I came up with a plan to reseearch
-        until I could out down some anchor points.
+        to have, and told to get to work. So I came up with a plan to research
+        until I could put down some anchor points.
       </p>
       <p></p>
       <ol>
@@ -23,19 +23,19 @@
           document outlining requirements
         </li>
         <li>
-          <a href="#arch">Architechture</a>: Decide on monolithic vs
+          <a href="#arch">Architecture</a>: Decide on monolithic vs
           client/server
         </li>
         <li>
           <a href="#tech-stack">Tech Stack</a>: Choose languages and frameworks
         </li>
         <li>
-          Database: Crete ERD diagrams for database tables for then unknown
-          database type - MsSQL is eventual chosen database
+          Database: Create ERD diagrams for database tables for a then-unknown
+          database type - MsSQL was the eventual choice
         </li>
         <li>
           <a href="#dep-and-prod">Deployment and Production</a>: Consider how
-          the production enviroment will work
+          the production environment will work
         </li>
       </ol>
       <div id="fn-req">
@@ -73,7 +73,7 @@
         </ul>
       </div>
       <div id="arch">
-        <h4>Architechure</h4>
+        <h4>Architecture</h4>
         <p>The decision was then to choose between two main designs:</p>
         <ol>
           <li>
@@ -81,7 +81,7 @@
             single unit using C#
           </li>
           <li>
-            Client/server: Create seperate back and front ends using web
+            Client/server: Create separate back and front ends using web
             development technologies
           </li>
         </ol>
@@ -97,7 +97,7 @@
         </p>
         <p>
           Choosing the client/server design meant we were truthfully just
-          building a web app distguised as a desktop app - lets keep it all in
+          building a web app disguised as a desktop app - let's keep it all in
           Typescript.
         </p>
         <ul>
@@ -107,7 +107,7 @@
           </li>
           <ul>
             <li>
-              Runs a chromuim browser instance that steers the web development
+              Runs a Chromium browser instance that steers the web development
               code into C++
             </li>
           </ul>
@@ -116,12 +116,12 @@
             REST API.
             <ul>
               <li>
-                Known for speedm which we need be being very background-task
+                Known for speed, which we need, being very background-task
                 heavy
               </li>
               <li>
-                Built-in APIs lile decorators and plugins keep things simple and
-                effienct by default
+                Built-in APIs like decorators and plugins keep things simple and
+                efficient by default
               </li>
             </ul>
           </li>
@@ -151,19 +151,19 @@
       <h4>Deployment and Production</h4>
       <p>
         Most of the reasoning behind all the previous decisions was related to
-        how this application would be deployed –- on a client's server isolated
-        behind a firewall or proxy, making it inaccessbile from the open
+        how this application would be deployed – on a client's server isolated
+        behind a firewall or proxy, making it inaccessible from the open
         internet.
       </p>
       <p>
         In this single tenancy model each installation needs to provide the
         entire processing and database apparatus needed for all app operations.
-        Every deployment is a seperate isolated instance.
+        Every deployment is a separate isolated instance.
       </p>
       <p>
         Shipping the frontend Electron side is pretty standard. The challenge is
-        the Fastify backend. Is ships as an execuatable wrapped by some C#
-        making it runnable as a windows service. The client must bring their own
+        the Fastify backend. It ships as an executable wrapped by some C#
+        making it runnable as a Windows service. The client must bring their own
         MsSQL database.
       </p>
     </div>
@@ -181,18 +181,18 @@
       <div id="lytehorse-dyno">
         <p>
           The machine's construction was a solid metal frame inset with four 12
-          inch rollers use to move the mounted vehicle - essentially these are what made this a dyno. The vechile rolled on top of these.
+          inch rollers used to move the mounted vehicle - essentially these are what made this a dyno. The vehicle rolled on top of these.
         </p>
         <p>
           Each roller was connected to an electric motor for drive, brake, and
           torque/HP testing. The motors connected to Kelly motor controllers,
-          which then connected to an Arduino. This was our way to commuicate.
+          which then connected to an Arduino. This was our way to communicate.
         </p>
         <p>
-          On the user's end, a python program used our custom UART-based
+          On the user's end, a Python program used our custom UART-based
           protocol to send and receive communications over serial. We used a
           <a href="https://www.pjrc.com/store/teensy41_pins.html">Teensy</a>
-          microntroller since it has eight serial ports, and recieved
+          microcontroller since it has eight serial ports, and received
           asynchronous communication from both directions.
         </p>
         <ul>
@@ -204,7 +204,7 @@
                 signalled electric motor controllers on the machine.
               </li>
               <li>
-                Tools used included TKinter for GUI; multi-threading and TCP
+                Tools used included Tkinter for GUI; multi-threading and TCP
                 socket APIs for asynchronous communication.
               </li>
             </ul>
