@@ -3,15 +3,32 @@ layout: page
 ---
 <div class="page-container work-container">
     <div class="work-heading">
-        <h2>Personal Projects</h2>
+        <h2>Personal Project Work</h2>
         <a href="{{ '/' | relative_url }}">
             <div class="cir icon">CD</div>
         </a>
         <div>
-            These are personal projects I've created through the process of learning new technologies. 
+            Tools, Apps, and Learning Projects 
         </div>
     </div>
     <div class="work-content">
+        <div class="work-project">
+            <div>
+               <div>TKinter Developer Tools</div>
+            </div>
+            <div>
+                About: Wrapper to add devtools window to Tkinter GUI apps. Inspired by browser devtools.  
+            </div>
+            <div>
+                Code: <a href="https://github.com/chrisdel101/tkinter-devtools">Link</a>
+            </div>
+             <div>
+                Tech: Python (zero dependencies)
+            </div>
+             <div>
+                Status: Working
+            </div>
+        </div>
         <div class="work-project">
             <div>
                 <a href="https://hackernews-whosehiring.vercel.app/2024/3">Hacker News Who's Hiring</a>
@@ -116,7 +133,7 @@ layout: page
         </div>
         <div class="work-project">
             <div>
-                Place Puppy (2018-2023)
+                Place Puppy (RIP: 2018-2023)
             </div>
             <div>
                 About: Call an endpoint, get a puppy. Images were used as placeholders in development, or wherever.

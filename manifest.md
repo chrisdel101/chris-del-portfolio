@@ -113,22 +113,22 @@ layout: page
           <li>
           Fulfilling Project Requirements
             <ul>
-                <li>Delivering software that matches requirements and operates as expected</li>
+                <li>Delivering software that matches requirements, and operates as expected</li>
             </ul>
           </li>
             <li>
             Creative Problem Solving
             <ul>
               <li>
-               Extracing project requirements from any available details  
+               Extracing important requirements when details are limited  
               </li>
               <li>Constructing designs through stories and dialogue </li>
               <li>
-                Delivering shippable solutions -  on schedule
+                Delivering shippable solutions on schedule
               </li>
               <li>Creating automation for repetitive or lengthy tasks</li>
               <li>
-                Manipulating library source code, versioning, environments, etc. when required
+                Patching libraries, versioning, environments at unexpected failure points
               </li>
             </ul>
           </li>
@@ -136,18 +136,19 @@ layout: page
             Architecting and Designing
             <ul>
               <li>
-                Initating projects
-                and researching best tools/structures for the job
+                Initating with design docuements, diagraming, and wireframing
               </li>
               <li>
-               Considering factors like deployment, security, operting system, production environment, distribution
+                Researching best tools/structures to match requirements
               </li>
               <li>
-               Structuring codebase with consistent naming and foldering
+               Considering factors like deployment, security, operting system, production environment, distribution in design choice
               </li>
               <li>
-                Using software design patterns such as observer, factory, decorator,
-                etc.
+               Keeping naming and foldering consistent
+              </li>
+              <li>
+                Using software design patterns such as observer, factory, decorator
               </li>
             </ul>
           </li>
@@ -155,12 +156,12 @@ layout: page
           Clean Coding 
           <ul>
             <li>
-            Obsessing to:
+            Obsessing over:
                 <ol>
-                    <li>Make code as readable as posssible</li>
-                    <li>Make code as concise as possible, without sacraficing readbability</li>
-                    <li>Make code design app-wide as consistent as possible</li>
-                    <li>Reuse and keep things DRY</li>
+                    <li>Making code as readable as posssible</li>
+                    <li>Making code as concise as possible, without sacraficing readbability</li>
+                    <li>Making code design app-wide as consistent as possible</li>
+                    <li>Reusing and keeping things DRY</li>
                 </ol>
             </li>
           </ul>
@@ -168,16 +169,17 @@ layout: page
           <li>
             Language Agnosticism
             <ul>
-              <li>Comfortable working across languages and paradigms.</li>
-              <li>Experimenting with different tools.</li>
+              <li>Working across languages and paradigms</li>
+              <li>Experimenting with different tools</li>
             </ul>
           </li>
           <li>
-            Documentation
+            Documentating
             <ul>
               <li>Tracking progress and tasks across a project</li>
               <li>Keeping logs of key design and techincal details for reference</li>
               <li>Notating tasks in detail for historical clarity</li>
+              <li>Building API docs using Swagger</li>
             </ul>
           </li>
           <li>Public Speaking/Writing/Presenting</li>
@@ -185,7 +187,6 @@ layout: page
       </div>
     <div id="intermediate-skills" class="job-detail">
       <h3>ADDITIONAL AREAS OF INTEREST</h3>
-      <div><em>Interested but not neccessarily skilled</em></div>
       <ul>
         <li>Functional Programming</li>
         <li>Hardware and Robotics</li>

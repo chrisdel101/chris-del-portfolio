@@ -44,15 +44,6 @@ li {
     overflow-x: scroll;
     overflow-y: scroll;
 }
-.open-source-container h2 {
-    margin: 0;
-}
-.open-source-heading {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    min-height: 200px;
-}
 .work-heading {
     display: flex;
     flex-direction: column;
