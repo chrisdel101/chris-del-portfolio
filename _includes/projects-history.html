@@ -170,18 +170,17 @@
   </div>
   <hr />
   <div class="job-detail">
-    <div id="pi-esri-integrator">
+      <div id="lytehorse-dyno">
       <h3>DIY Dynamometer</h3>
       <h4>Lytehorse | Project Dates: May 2022 - Aug 2022</h4>
       <p class="tldr">
-        <strong>TL;DR</strong> Vehicle dynamometers start at around $25,000.
-        Using off-the-shelf components the goal was to build one ourselves for a
-        small fraction.
+        <strong>TL;DR</strong> Dynamometers are used to test vehicles. They start at around $25,000.
+        The goal here was to use off-the-shelf components to build one ourselves.
       </p>
-      <div id="lytehorse-dyno">
+      <div>
         <p>
           The machine's construction was a solid metal frame inset with four 12
-          inch rollers used to move the mounted vehicle - essentially these are what made this a dyno. The vehicle rolled on top of these.
+          inch rollers used to move the mounted vehicle - essentially these are what made this a dyno. The vehicle sat on top and drove.
         </p>
         <p>
           Each roller was connected to an electric motor for drive, brake, and
@@ -195,37 +194,7 @@
           microcontroller since it has eight serial ports, and received
           asynchronous communication from both directions.
         </p>
-        <ul>
-          <li>
-            Primary task #1 was to develop native software using Python.
-            <ul>
-              <li>
-                Using serial protocol, Python signalled Arduino. Arduino then
-                signalled electric motor controllers on the machine.
-              </li>
-              <li>
-                Tools used included Tkinter for GUI; multi-threading and TCP
-                socket APIs for asynchronous communication.
-              </li>
-            </ul>
-          </li>
-          <li>
-            Primary task #2 was to develop logic for Arduino microcontroller in
-            C language. This handled communication between user and machine
-            using serial.
-            <ul>
-              <li>
-                Two-way serial communication meant Arduino accepted input from
-                both Python and motor controller systems simultaneously.
-              </li>
-              <li>
-                Arduino signal directions: received serial input from Python,
-                received serial input from motor controller, sent out
-                appropriate serial output responses.
-              </li>
-            </ul>
-          </li>
-        </ul>
+        
       </div>
     </div>
   </div>
