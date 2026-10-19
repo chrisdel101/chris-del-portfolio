@@ -7,6 +7,6 @@ The baseurl and url do not work properly and so we need two configs. These are s
 
 **Local run**
 
-use `config_dev.yaml` with flag to run the correct baseUrl without the appended params.
+use `_config_dev.yml` with flag to run the correct baseUrl without the appended params.
 
     Run: `bundle exec jekyll serve --config _config.yml,_config_dev.yml`

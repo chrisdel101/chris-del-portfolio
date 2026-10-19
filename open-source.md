@@ -38,7 +38,7 @@ layout: page
                 <td>Bash script to copy and reuse CONTRIBUTING.md content in the html</td>
             </tr>
             <tr>
-                <td>expressjs.com: Add blog feature to site.</td>
+                <td>expressjs.com: Add blog feature to site</td>
                 <td><a href="https://github.com/expressjs/expressjs.com/pull/1519">Link</a></td>
                 <td>merged</td>
                 <td>Add support for blogging section of the website</td>
@@ -74,7 +74,7 @@ layout: page
                 <td>This task was listed as open. I submitted a PR with the updates.</td>
             </tr>
             <tr>
-                <td>freeCodeCamp: Updated lesson documentation to mention ES6 Javascript</td>
+                <td>freeCodeCamp: Updated lesson documentation to mention ES6 JavaScript</td>
                 <td><a href="https://github.com/freeCodeCamp/freeCodeCamp/pull/34414">Link</a></td>
                 <td>merged</td>
                 <td>Made significant changes to lesson plan text, including some small code changes.</td>

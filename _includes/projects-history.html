@@ -12,10 +12,9 @@
       </p>
       <p>
         This was a project started from scratch, and I wasn't given much detail. Just a
-        few rough project parameters, and few suggestions about what would be nice
+        few rough project parameters, and a few suggestions about what would be nice
         to have. I set to researching and brainstorming until I could put down some project requirements before writing any code.
       </p>
-      <p></p>
       <ol>
         <li>
           <a href="#fn-req">Functional Requirements</a>: Create a design
@@ -96,25 +95,25 @@
         </p>
         <p>
           Choosing the client/server design meant we were building a web app disguised as a desktop app - let's keep it all in
-          Typescript.
+          TypeScript.
         </p>
         <ul>
           <li>
             Electron: C++ binary wrapper allowing us to run our frontend web
             code natively
+            <ul>
+              <li>
+                Runs a Chromium browser instance that steers the web development
+                code into C++
+              </li>
+            </ul>
           </li>
-          <ul>
-            <li>
-              Runs a Chromium browser instance that steers the web development
-              code into C++
-            </li>
-          </ul>
           <li>
             Fastify: NodeJS Express-like framework used to build our backend
             REST API
             <ul>
               <li>
-                Known for speed, which was important being very background-task heavy
+                Known for speed, which was important since the app is very background-task heavy
               </li>
               <li>
                 Built-in APIs like decorators and plugins keep things simple and
@@ -123,7 +122,7 @@
             </ul>
           </li>
           <li>
-            VueJS: JS frameworks offer the best developer experience for
+            Vue.js: JS frameworks offer the best developer experience for
             building UI
             <ul>
               <li>
@@ -132,15 +131,17 @@
               </li>
             </ul>
           </li>
-          <li>Prisma: Modern ORM handles database interaction</li>
-          <ul>
-            <li>
-              If we needed to support different databases we didn't want to
-              re-write our own SQL for each one
-            </li>
-            <li>Prisma ORM supports all the major databases</li>
-          </ul>
-          <li>Primevue: Vue UI component design suite</li>
+          <li>
+            Prisma: Modern ORM handles database interaction
+            <ul>
+              <li>
+                If we needed to support different databases we didn't want to
+                re-write our own SQL for each one
+              </li>
+              <li>Prisma ORM supports all the major databases</li>
+            </ul>
+          </li>
+          <li>PrimeVue: Vue UI component design suite</li>
         </ul>
       </div>
     </div>
@@ -148,7 +149,7 @@
       <h4>Deployment and Production</h4>
       <p>
         Previous design decisions are related to
-        the application's deployment procedure – its deployed to a client's personal server isolated
+        the application's deployment procedure – it's deployed to a client's personal server isolated
         behind a firewall or proxy, making it inaccessible from the open
         internet.
       </p>
@@ -176,8 +177,8 @@
       </p>
       <div>
         <p>
-          The machine's construction was a solid metal frame inset with four 12
-          inch rollers used to move the mounted vehicle - essentially these are what made this a dyno. The vehicle sat on top and drove.
+          The machine's construction was a solid metal frame inset with four 12-inch
+          rollers used to move the mounted vehicle - essentially these are what made this a dyno. The vehicle sat on top and drove.
         </p>
         <p>
           Each roller was connected to an electric motor for drive, brake, and

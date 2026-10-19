@@ -1,6 +1,6 @@
 ---
 layout: page
-# this is the work history pages
+# this is the work history page
 ---
 
 <section class="work-related-container page-container">

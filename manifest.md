@@ -17,20 +17,20 @@ layout: page
       <h4>SOFTWARE DEVELOPER</h4>
     </div>
     <div id="dev-journey" class="work-related-content">
-    <h3 class="content-title">SKILLS AND PROFCIENCY</h3>
+    <h3 class="content-title">SKILLS AND PROFICIENCY</h3>
     <hr>
     <div class="skills-print-container job-detail">
       <div id="langs-and-tech">
         <h4>TOP LANGUAGES AND FRAMEWORKS</h4>
         <h5>FIRST TIER</h5>
-        <div><em>My Profesional Toolbox</em></div>
+        <div><em>My Professional Toolbox</em></div>
         <table>
           <tr>
             <th>Tech</th>
             <th>Years</th>
           </tr>
           <tr>
-            <td>Javascript/Typescript</td>
+            <td>JavaScript/TypeScript</td>
             <td>5+</td>
           </tr>
           <tr>
@@ -99,7 +99,7 @@ layout: page
         </tr>
         <tr>
           <td>Scheme/Lisp/Racket</td>
-          <td>>1</td>
+          <td>&lt;1</td>
         </tr>
         <tr>
             <td>PowerShell</td>
@@ -120,7 +120,7 @@ layout: page
             Creative Problem Solving
             <ul>
               <li>
-               Extracing important requirements when details are limited  
+               Extracting important requirements when details are limited  
               </li>
               <li>Constructing designs through stories and dialogue </li>
               <li>
@@ -136,13 +136,13 @@ layout: page
             Architecting and Designing
             <ul>
               <li>
-                Initating with design docuements, diagraming, and wireframing
+                Initiating with design documents, diagramming, and wireframing
               </li>
               <li>
                 Researching best tools/structures to match requirements
               </li>
               <li>
-               Considering factors like deployment, security, operting system, production environment, distribution in design choice
+               Considering factors like deployment, security, operating system, production environment, and distribution in design choice
               </li>
               <li>
                Keeping naming and foldering consistent
@@ -158,8 +158,8 @@ layout: page
             <li>
             Obsessing over:
                 <ol>
-                    <li>Making code as readable as posssible</li>
-                    <li>Making code as concise as possible, without sacraficing readbability</li>
+                    <li>Making code as readable as possible</li>
+                    <li>Making code as concise as possible, without sacrificing readability</li>
                     <li>Making code design app-wide as consistent as possible</li>
                     <li>Reusing and keeping things DRY</li>
                 </ol>
@@ -174,10 +174,10 @@ layout: page
             </ul>
           </li>
           <li>
-            Documentating
+            Documenting
             <ul>
               <li>Tracking progress and tasks across a project</li>
-              <li>Keeping logs of key design and techincal details for reference</li>
+              <li>Keeping logs of key design and technical details for reference</li>
               <li>Notating tasks in detail for historical clarity</li>
               <li>Building API docs using Swagger</li>
             </ul>

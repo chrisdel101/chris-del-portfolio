@@ -14,7 +14,7 @@ layout: page
     <div class="work-content">
         <div class="work-project">
             <div>
-               <div>TKinter Developer Tools</div>
+               <div>Tkinter Developer Tools</div>
             </div>
             <div>
                 About: Wrapper to add devtools window to Tkinter GUI apps. Inspired by browser devtools.  
@@ -40,7 +40,7 @@ layout: page
                 Code: <a href="https://github.com/chrisdel101/hackernews_whosehiring">Link</a>
             </div>
              <div>
-                Tech: React, NextJS, Typescript, Hacker News API
+                Tech: React, NextJS, TypeScript, Hacker News API
             </div>
              <div>
                 Status: Working
@@ -102,7 +102,7 @@ layout: page
                 F1 Stats Scraper API
             </div>
             <div>
-                About: Scrapes Formula 1 data and returns it in json. Works as an API to F1 Web app. Built 2019.
+                About: Scrapes Formula 1 data and returns it in JSON. Works as an API to F1 Web app. Built 2019.
             </div>
             <div>
                 Code: <a href="https://github.com/chrisdel101/f1-api">Link</a>
@@ -119,7 +119,7 @@ layout: page
                 F1 Web App
             </div>
             <div>
-                About: Consumes F1 Stats Scraper API json and builds baseball-style cards for Formula 1. Built 2019.
+                About: Consumes F1 Stats Scraper API JSON and builds baseball-style cards for Formula 1. Built 2019.
             </div>
             <div>
                 Code: <a href="https://github.com/chrisdel101/f1-web">Link</a>
