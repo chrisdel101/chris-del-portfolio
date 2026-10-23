@@ -28,12 +28,12 @@
           <a href="#tech-stack">Tech Stack</a>: Choose languages and frameworks
         </li>
         <li>
-          Database: Create ERD diagrams for database tables for a then-unknown
+          Database: Create ERD diagrams for database tables for a then unknown
           database type - MsSQL was the eventual choice
         </li>
         <li>
           <a href="#dep-and-prod">Deployment and Production</a>: Consider how
-          the production environment will work
+          the production environment will affect the design
         </li>
       </ol>
       <div id="fn-req">
@@ -136,7 +136,7 @@
             <ul>
               <li>
                 If we needed to support different databases we didn't want to
-                re-write our own SQL for each one
+                rewrite our own SQL for each one
               </li>
               <li>Prisma ORM supports all the major databases</li>
             </ul>
@@ -148,20 +148,18 @@
     <div id="dep-and-prod">
       <h4>Deployment and Production</h4>
       <p>
-        Previous design decisions are related to
-        the application's deployment procedure – it's deployed to a client's personal server isolated
+        It is deployed to a client's personal server isolated
         behind a firewall or proxy, making it inaccessible from the open
-        internet.
+        internet. All our design decisions needed to consider this.
       </p>
       <p>
-        In this single tenancy model each installation needs to provide the
-        entire processing and database apparatus needed for all app operations.
-        Every deployment is a separate isolated instance. 
+        Every deployment is a separate isolated instance. In this single tenancy model each installation needs to provide the
+        entire processing and database apparatus for all app operations.
       </p>
       <p>
-        Shipping the frontend Electron side is pretty standard. The challenge is
-        the Fastify backend. It ships as an executable wrapped by some C#
-        making it runnable as a Windows service.  The client must bring their own
+        Shipping the frontend Electron side is pretty standard. The challenge was 
+        the Fastify backend. It needed to ship as an executable wrapped by some C#
+        making it runnable as a Windows service.  The client then brings their own
         MsSQL database.
       </p>
     </div>
