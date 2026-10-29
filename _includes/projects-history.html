@@ -181,23 +181,21 @@
         components to build one ourselves.
       </p>
       <div>
-        <div>
-          There were 3 main parts to this project.
-          <ol>
-            <li>
-              <a href="#proto-and-elec">Prototyping and Electronics</a>:
-              Circuits, making motors turn, and hacking the vehicle control
-            </li>
-            <li>
-              <a href="#hardware-prog">Hardware  Programming</a>: Programming
-              embeeded C on the Ardunio
-            </li>
-            <li>
-              <a href="#dyno-app">Dyno Run Software</a>: Main Python application
-              to run the dyno
-            </li>
-          </ol>
-        </div>
+        <p>There were 3 main parts to this project.</p>
+        <ol>
+          <li>
+            <a href="#proto-and-elec">Prototyping and Hardware</a>: Metal stuff,
+            circuits, and making motors turn
+          </li>
+          <li>
+            <a href="#hardware-prog">Arduino Programming</a>: Programming
+            embedded C in Arduino Studio
+          </li>
+          <li>
+            <a href="#dyno-app">Building Dyno Application</a>: Main Python
+            software to run the dyno
+          </li>
+        </ol>
         <div id="proto-and-elec">
           <h4>ProtoTyping and Electronics</h4>
           <div class="image-container">
@@ -222,23 +220,145 @@
             On the user's end, a Python program used our custom UART-based
             protocol to send and receive communications over serial. We used a
             <a href="https://www.pjrc.com/store/teensy41_pins.html">Teensy</a>
-            microcontroller since it has eight serial ports, and received
-            asynchronous communication from both directions.
+            microcontroller, which is a suped up Arduino. See image below. It
+            had eight serial ports which we needed. We needed alot of serial
+            ports to handles all asynchronous communication between devices.
           </p>
           <p>
             I'm writing this years after this project ended and don't remember
-            what everything here connects to anymore. The gist is that computer
-            sits on one end, the motor controllers on the other, and all comms
-            pass through here.
+            what everything here connects to anymore. There was even more cool
+            circuitry stuff happening, but this is all lost to the sands of
+            time. The gist is: that computer sits on one end, the motor
+            controllers on the other, and all comms pass through the Arduino.
           </p>
           <div class="image-container">
             <img src="assets/pics/circuit.png" alt="dyno-circuits" />
           </div>
         </div>
         <div id="hardware-prog">
-      <h4>Harwdware Programmming
-      </h4>
-    </div>
+          <h4>Harwdware Programmming</h4>
+          <p>The Arduino had to handle bidirectional I/O from 2 sources:</p>
+          <ol>
+            <li>Python desktop app <=> Arduino</li>
+            <li>Arduino <=> Motor controllers</li>
+          </ol>
+          <p>
+            Arduino listens by default using the <code>void loop()</code> API.
+            When input came from application this was into a simple state
+            machine. We used a protocol based JBD BMS Protocol which from an
+            auto industry battery and electrics company.
+          </p>
+          <div class="pico" data-theme="light">
+            <blockquote>
+<pre>/* Message Format
+*  Byte: 1       | Start bit [0xDD] (1 byte)
+*        2:7     | Message Header (6-bytes)
+*        8:X     | Message Data (variable byte Size)
+*        X+1:X+2 | Message Checksum (message header + data size)
+*        X+3     | End bit [0x77]
+*/</pre>
+            </blockquote>
+          </div>
+
+          <pre><code class="language-c">
+            switch (rx_state)
+            {
+
+            case UART_RX_STATE_IDLE:
+            {
+              uint8_t data_in = UART_HOST_RX_SERIAL.read();
+              // Check for the start bit pattern
+              if (data_in == UART_RX_START_BIT_PATTERN)
+              {
+                // Move to the Header receive state
+                set_rx_state(UART_RX_STATE_HEADER);
+              }
+
+              break;
+            }
+            case UART_RX_STATE_HEADER:
+            {
+              // Read the bytes into the header structure
+              UART_HOST_RX_SERIAL.readBytes((char *)&amp;rx_header, sizeof(msg_header_t));
+              // Move to the Data receive state
+              set_rx_state(UART_RX_STATE_DATA);
+
+              break;
+            }
+            case UART_RX_STATE_DATA:
+            {
+              // If all of the expected data has been received
+              if (rx_data_idx &gt;= rx_header.len)
+              {
+                // Move to the Chksum receive state
+                set_rx_state(UART_RX_STATE_CHKSUM);
+              }
+              else
+              {
+                // Add the received data to the buffer
+                rx_data[rx_data_idx] = UART_HOST_RX_SERIAL.read();
+                rx_data_idx++;
+              }
+
+              break;
+            }
+            case UART_RX_STATE_CHKSUM:
+            {
+              // Read the bytes into the checksum structure
+              UART_HOST_RX_SERIAL.readBytes((char *)&amp;rx_chksum, sizeof(msg_chksum_t));
+
+              // Compute the checksum of the received header and data
+              msg_chksum_t msg_chksum = 0;
+              uint8_t i;
+              uint8_t *rx_header_data = (uint8_t *)&amp;rx_header;
+              for (i = 0; i &lt; sizeof(msg_header_t); i++)
+              {
+                msg_chksum = bsd_chksum(msg_chksum, rx_header_data[i]);
+              }
+              for (i = 0; i &lt; rx_header.len; i++)
+              {
+                msg_chksum = bsd_chksum(msg_chksum, rx_data[i]);
+              }
+
+              // Compare the calculated and received checksums
+              if (msg_chksum == rx_chksum)
+              {
+                // If match, move to the End bit receive state
+                set_rx_state(UART_RX_STATE_ENDL);
+              }
+              else
+              {
+                // Otherwise, reset to the Idle state
+                set_rx_state(UART_RX_STATE_IDLE);
+              }
+
+              break;
+            }
+            case UART_RX_STATE_ENDL:
+            {
+              uint8_t data_in = UART_HOST_RX_SERIAL.read();
+              // Check for the end bit pattern
+              if (data_in == UART_RX_END_BIT_PATTERN)
+              {
+                // Message is valid, pass to process function
+                uart_rx_message(rx_header.msg_id, rx_header.bus_id, rx_header.len, rx_data);
+              }
+
+              // Move back to Idle state to receive next message
+              set_rx_state(UART_RX_STATE_IDLE);
+
+              break;
+            }
+            default:
+            {
+              // In an invalid receive state, move back to Idle
+              set_rx_state(UART_RX_STATE_IDLE);
+
+              break;
+            }
+            }
+          </code></pre>
+        </div>
       </div>
     </div>
   </div>

@@ -4,18 +4,19 @@
   value:
       - i'm a developer
       - this is my portfolio
+      - made by me. Not AI
       - click a link below
   typed: true
 - key: skills & interests
   value: /manifest
   url: /manifest
-- key: professional stuff  
+- key: professional stuff --verbose
   value:
-      - value: work history  
+      - value: /work-history  
         url: /work-history
-      - value: work projects --verbose
+      - value: /work projects
         url: /projects-work-history
-      - value: resume --pdf
+      - value: /resume
         url: /resume.pdf
 - key: projects
   value: /work
