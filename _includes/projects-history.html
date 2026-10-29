@@ -189,7 +189,7 @@
           </li>
           <li>
             <a href="#hardware-prog">Arduino Programming</a>: Programming
-            embedded C in Arduino Studio
+            embedded C++ in Arduino Studio
           </li>
           <li>
             <a href="#dyno-app">Building Dyno Application</a>: Main Python
@@ -201,6 +201,7 @@
           <div class="image-container">
             <img src="assets/pics/full.png" alt="dyno-with-vehicle" />
           </div>
+          <p>We only achieved very basic controls for throttle and braking, but it was possible to control the vehicle and dyno separately.</p>
           <p>
             The machine's construction was a solid metal frame inset with four
             12-inch rollers used to move the mounted vehicle - essentially these
@@ -226,10 +227,9 @@
           </p>
           <p>
             I'm writing this years after this project ended and don't remember
-            what everything here connects to anymore. There was even more cool
+            what everything here connected to anymore. There was much cool
             circuitry stuff happening, but this is all lost to the sands of
-            time. The gist is: that computer sits on one end, the motor
-            controllers on the other, and all comms pass through the Arduino.
+            time.
           </p>
           <div class="image-container">
             <img src="assets/pics/circuit.png" alt="dyno-circuits" />
@@ -237,16 +237,23 @@
         </div>
         <div id="hardware-prog">
           <h4>Harwdware Programmming</h4>
-          <p>The Arduino had to handle bidirectional I/O from 2 sources:</p>
+          <p><strong>The gist</strong>:   the    computer sits on one end, the motor
+            controllers on the other, and all comms pass through the Arduino. So Arduino had to handle bidirectional I/O from both sources:</p>
           <ol>
-            <li>Python desktop app <=> Arduino</li>
-            <li>Arduino <=> Motor controllers</li>
+            <li><strong>Source In/Out:</strong>   Python desktop app <=> Arduino</li>
+            <li><strong>Target Out/In:</strong> Arduino <=> Motor controllers</li>
           </ol>
+          <p><strong>1. Source In/Out</strong></p>
           <p>
-            Arduino listens by default using the <code>void loop()</code> API.
-            When input came from application this was into a simple state
-            machine. We used a protocol based JBD BMS Protocol which from an
-            auto industry battery and electrics company.
+            The app instigates the communication and Arduino listens by default using the <code>void loop()</code> API. Incoming messages are broken apart so we can identify what the instructions are. These are executed in part 2.
+          </p>
+          <p>
+            These needed to be fed into a simple state
+            machine. To handle this we used something like  <a href="https://www.scribd.com/document/618493902/JBD-Protocol-English-version#google_vignette">JBD BMS Protocol</a>, which is from an
+            auto industry battery and electrics company. Our version uses the same start and end byte patterns, but the rest of ours is a mishmash.
+          </p>
+           <p>
+            Shown here is the scratch protocol. See how the book-ended by the JBD BMS hexadecimal byte patterns <code>[0xDD]</code> and <code>[0x77]</code>? This is the basis of the state processing.
           </p>
           <div class="pico" data-theme="light">
             <blockquote>
@@ -259,7 +266,9 @@
 */</pre>
             </blockquote>
           </div>
-
+          <p>
+            Each stage is a different state trigger for a different action.
+          </p>
           <pre><code class="language-c">
             switch (rx_state)
             {
@@ -358,7 +367,10 @@
             }
             }
           </code></pre>
+          <p><strong>2. Target Out/In</strong></p>
+          <p>Once the message is parsed and validated we run <code>uart_rx_message</code>. This sends the instructions output</p>
         </div>
+
       </div>
     </div>
   </div>
