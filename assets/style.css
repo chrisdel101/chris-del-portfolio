@@ -139,6 +139,12 @@ th {
 .open-source-container table {
     color: #dddddd;
 }
+.manifest-container table {
+    table-layout: fixed;
+}
+.manifest-container th:first-child {
+    width: 75%;
+}
 .description {
     font-size: 0.8em;
 }

@@ -67,11 +67,11 @@ layout: page
           </tr>
           <tr>
             <td>Elixir/Phoenix</td>
-            <td>1</td>
+            <td>2</td>
           </tr>
           <tr>
             <td>Rails/Ruby</td>
-            <td>2</td>
+            <td>1</td>
           </tr>
           <tr>
             <td>Bash Script</td>
@@ -99,7 +99,7 @@ layout: page
         </tr>
         <tr>
           <td>Scheme/Lisp/Racket</td>
-          <td>&lt;1</td>
+          <td>1</td>
         </tr>
         <tr>
             <td>PowerShell</td>
