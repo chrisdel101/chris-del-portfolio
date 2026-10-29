@@ -8,12 +8,13 @@
       <p class="tldr">
         <strong>TL;DR</strong> It builds background worker processes running on
         timed intervals, fetches data from a source API, and sends it to a
-        target API.
+        target API. This is the UI.
       </p>
       <p>
-        This was a project started from scratch, and I wasn't given much detail. Just a
-        few rough project parameters, and a few suggestions about what would be nice
-        to have. I set to researching and brainstorming until I could put down some project requirements before writing any code.
+        This was a project started from scratch, and I wasn't given much detail.
+        Just a few rough project parameters, and a few suggestions about what
+        would be nice to have. I set to researching and brainstorming until I
+        could put down some project requirements before writing any code.
       </p>
       <ol>
         <li>
@@ -36,6 +37,9 @@
           the production environment will affect the design
         </li>
       </ol>
+      <div class="image-container">
+        <img src="assets/pics/electron-main.jpg" alt="main-page-ui" />
+      </div>
       <div id="fn-req">
         <h4>Functional Requirements</h4>
         <ul>
@@ -94,8 +98,8 @@
           Finally the fun part! Deciding which languages and frameworks to use.
         </p>
         <p>
-          Choosing the client/server design meant we were building a web app disguised as a desktop app - let's keep it all in
-          TypeScript.
+          Choosing the client/server design meant we were building a web app
+          disguised as a desktop app - let's keep it all in TypeScript.
         </p>
         <ul>
           <li>
@@ -113,7 +117,8 @@
             REST API
             <ul>
               <li>
-                Known for speed, which was important since the app is very background-task heavy
+                Known for speed, which was important since the app is very
+                background-task heavy
               </li>
               <li>
                 Built-in APIs like decorators and plugins keep things simple and
@@ -148,49 +153,92 @@
     <div id="dep-and-prod">
       <h4>Deployment and Production</h4>
       <p>
-        It is deployed to a client's personal server isolated
-        behind a firewall or proxy, making it inaccessible from the open
-        internet. All our design decisions needed to consider this.
+        It is deployed to a client's personal server isolated behind a firewall
+        or proxy, making it inaccessible from the open internet. All our design
+        decisions needed to consider this.
       </p>
       <p>
-        Every deployment is a separate isolated instance. In this single tenancy model each installation needs to provide the
-        entire processing and database apparatus for all app operations.
+        Every deployment is a separate isolated instance. In this single tenancy
+        model each installation needs to provide the entire processing and
+        database apparatus for all app operations.
       </p>
       <p>
-        Shipping the frontend Electron side is pretty standard. The challenge was 
-        the Fastify backend. It needed to ship as an executable wrapped by some C#
-        making it runnable as a Windows service.  The client then brings their own
-        MsSQL database.
+        Shipping the frontend Electron side is pretty standard. The challenge
+        was the Fastify backend. It needed to ship as an executable wrapped by
+        some C# making it runnable as a Windows service. The client then brings
+        their own MsSQL database.
       </p>
     </div>
   </div>
   <hr />
   <div class="job-detail">
-      <div id="lytehorse-dyno">
+    <div id="lytehorse-dyno">
       <h3>DIY Dynamometer</h3>
       <h4>Lytehorse | Project Dates: May 2022 - Aug 2022</h4>
       <p class="tldr">
-        <strong>TL;DR</strong> Dynamometers are used to test vehicles. They start at around $25,000.
-        The goal here was to use off-the-shelf components to build one ourselves.
+        <strong>TL;DR</strong> Dynamometers are used to test vehicles. They
+        start at around $25,000. The goal here was to use off-the-shelf
+        components to build one ourselves.
       </p>
       <div>
-        <p>
-          The machine's construction was a solid metal frame inset with four 12-inch
-          rollers used to move the mounted vehicle - essentially these are what made this a dyno. The vehicle sat on top and drove.
-        </p>
-        <p>
-          Each roller was connected to an electric motor for drive, brake, and
-          torque/HP testing. The motors connected to Kelly motor controllers,
-          which then connected to an Arduino. This was our way to communicate.
-        </p>
-        <p>
-          On the user's end, a Python program used our custom UART-based
-          protocol to send and receive communications over serial. We used a
-          <a href="https://www.pjrc.com/store/teensy41_pins.html">Teensy</a>
-          microcontroller since it has eight serial ports, and received
-          asynchronous communication from both directions.
-        </p>
-        
+        <div>
+          There were 3 main parts to this project.
+          <ol>
+            <li>
+              <a href="#proto-and-elec">Prototyping and Electronics</a>:
+              Circuits, making motors turn, and hacking the vehicle control
+            </li>
+            <li>
+              <a href="#hardware-prog">Hardware  Programming</a>: Programming
+              embeeded C on the Ardunio
+            </li>
+            <li>
+              <a href="#dyno-app">Dyno Run Software</a>: Main Python application
+              to run the dyno
+            </li>
+          </ol>
+        </div>
+        <div id="proto-and-elec">
+          <h4>ProtoTyping and Electronics</h4>
+          <div class="image-container">
+            <img src="assets/pics/full.png" alt="dyno-with-vehicle" />
+          </div>
+          <p>
+            The machine's construction was a solid metal frame inset with four
+            12-inch rollers used to move the mounted vehicle - essentially these
+            are what made this a dyno. The vehicle sat on top and drove.
+          </p>
+          <p>
+            Each roller was connected to an electric motor for drive, brake, and
+            torque/HP testing. The motors connected to Kelly motor controllers,
+            which then connected to an Arduino. This was our way to communicate
+            - everything used serial.
+          </p>
+          <div class="image-container">
+            <img src="assets/pics/roller.png" alt="metal-roller" />
+          </div>
+
+          <p>
+            On the user's end, a Python program used our custom UART-based
+            protocol to send and receive communications over serial. We used a
+            <a href="https://www.pjrc.com/store/teensy41_pins.html">Teensy</a>
+            microcontroller since it has eight serial ports, and received
+            asynchronous communication from both directions.
+          </p>
+          <p>
+            I'm writing this years after this project ended and don't remember
+            what everything here connects to anymore. The gist is that computer
+            sits on one end, the motor controllers on the other, and all comms
+            pass through here.
+          </p>
+          <div class="image-container">
+            <img src="assets/pics/circuit.png" alt="dyno-circuits" />
+          </div>
+        </div>
+        <div id="hardware-prog">
+      <h4>Harwdware Programmming
+      </h4>
+    </div>
       </div>
     </div>
   </div>

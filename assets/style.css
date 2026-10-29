@@ -6,6 +6,14 @@ main {
     align-items: center;
     width: 100%;
 }
+img {
+    max-width: 100%;
+}
+.image-container {
+    width: 60%;
+    margin: auto;
+    padding: 10px 0;
+}
 ol > li {
     margin: 10px 0;
 }
