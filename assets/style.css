@@ -166,8 +166,7 @@ th {
 }
 /* wrap long code lines instead of overflowing */
 pre[class*='language-'],
-code[class*='language-'],
-.pico blockquote pre {
+code[class*='language-'] {
   white-space: pre-wrap;
   word-break: break-word;
 }
