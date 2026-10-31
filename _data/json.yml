@@ -14,8 +14,8 @@
   value:
       - value: /work-history  
         url: /work-history
-      - value: /work projects
-        url: /projects-work-history
+      - value: /work-history-projects
+        url: /work-history-projects 
       - value: /resume
         url: /resume.pdf
 - key: projects

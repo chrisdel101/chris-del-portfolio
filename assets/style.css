@@ -81,8 +81,11 @@ li {
   color: black;
   padding: 5px;
 }
-.work-project a,
-.job-detail a {
+a:not(
+    #json a,
+    a:has(.cir),
+    .open-source-container td a
+  ) {
   color: #0000ff;
 }
 .page-container {
@@ -167,6 +170,12 @@ code[class*='language-'],
 .pico blockquote pre {
   white-space: pre-wrap;
   word-break: break-word;
+}
+/* center comment-style code blocks */
+pre.comment-block > code {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
 }
 .print-only {
   display: none;

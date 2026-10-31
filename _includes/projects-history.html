@@ -1,9 +1,15 @@
 <div id="project-experience" class="work-related-content">
   <h3 class="content-title">PROJECT HISTORY</h3>
+  <ol>
+    <li><a href="#pi-integrator-proj">Fastify Vue Electron Aveva Pi Esri Integrator</a>
+    </li>
+    <li><a href="#dyno-proj">Building a DIY Dynamometer</a>
+    </li>
+  </ol>
   <hr />
-  <div class="job-detail">
+  <div class="job-detail" id="pi-integrator-proj">
     <div id="pi-esri-integrator">
-      <h3>Aveva PI API to Esri Integrator Desktop App</h3>
+      <h3>Fastify Vue Electron Aveva Pi Esri Integrator</h3>
       <h4>Kvale Consulting | Project Dates: Jan 2026 - Oct 2026</h4>
       <p class="tldr">
         <strong>TL;DR</strong> It builds background worker processes running on
@@ -171,9 +177,9 @@
     </div>
   </div>
   <hr />
-  <div class="job-detail">
+  <div class="job-detail" id="dyno-proj">
     <div id="lytehorse-dyno">
-      <h3>DIY Dynamometer</h3>
+      <h3>Building a DIY Dynamomete</h3>
       <h4>Lytehorse | Project Dates: May 2022 - Aug 2022</h4>
       <p class="tldr">
         <strong>TL;DR</strong> Dynamometers are used to test vehicles. They
@@ -240,8 +246,8 @@
           <p><strong>The gist</strong>:   the    computer sits on one end, the motor
             controllers on the other, and all comms pass through the Arduino. So Arduino had to handle bidirectional I/O from both sources:</p>
           <ol>
-            <li><strong>Source In/Out:</strong>   Python desktop app <=> Arduino</li>
-            <li><strong>Target Out/In:</strong> Arduino <=> Motor controllers</li>
+            <li><strong>Source In/Out:</strong>   Python desktop app &lt;=&gt; Arduino</li>
+            <li><strong>Target Out/In:</strong> Arduino &lt;=&gt; Motor controllers</li>
           </ol>
           <p><strong>1. Source In/Out</strong></p>
           <p>
@@ -255,17 +261,15 @@
            <p>
             Shown here is the scratch protocol. See how it's book-ended by the JBD BMS hexadecimal byte patterns <code>[0xDD]</code> and <code>[0x77]</code>? This is the basis of the state processing.
           </p>
-          <div class="pico" data-theme="light">
-            <blockquote>
-<pre>/* Message Format
-*  Byte: 1       | Start bit [0xDD] (1 byte)
-*        2:7     | Message Header (6-bytes)
-*        8:X     | Message Data (variable byte Size)
-*        X+1:X+2 | Message Checksum (message header + data size)
-*        X+3     | End bit [0x77]
-*/</pre>
-            </blockquote>
-          </div>
+          <pre class="comment-block"><code class="language-c">
+            /* Message Format
+             *  Byte: 1       | Start bit [0xDD] (1 byte)
+             *        2:7     | Message Header (6-bytes)
+             *        8:X     | Message Data (variable byte Size)
+             *        X+1:X+2 | Message Checksum (message header + data size)
+             *        X+3     | End bit [0x77]
+             */
+          </code></pre>
           <p>
             Each stage is a different state trigger for a different action.
           </p>
@@ -389,49 +393,89 @@
           <p>
             Tkinter is a steam engine or wood burning stove. Reliable, but not a modern tool for building software
           </p>
-            <ul>
-              <li>
-                In a world of components it still uses "widgets" to construct pages
-              </li>
-              <li>
-                Widgets must be "packed" just to show up, and most page geometry must be handled manually
-              </li>
-              <li>
-                And styling...fuhgeddaboudit.
-              </li>
-            </ul>
+          <ul>
+            <li>
+              In a world of components it still uses "widgets" to construct pages
+            </li>
+            <li>
+              Widgets must be "packed" just to show up, and most page geometry must be handled manually
+            </li>
+            <li>
+              And styling...fuhgeddaboudit.
+            </li>
+          </ul>
           <p>  
            There were three main modules:
           </p>
           <ol>
-           <li><a href="gui-frontend">Gui Interface "Frontend"</a></li>
-           <li><a href="busin-backend">Business Logic "Backend"</a></li>
-           <li><a href="socket-net">Socket Networking Interface</a></li>
+           <li><a href="#gui-frontend">Gui Interface "Frontend"</a></li>
+           <li><a href="#busin-backend">Business Logic "Backend"</a></li>
+           <li><a href="#socket-net">Socket Networking Interface</a></li>
           </ol>
-          <p id="gui-frontend">
+          <div id="gui-frontend">
             <p><strong>GUI Interface</strong></p>
             <p>
               In the spirit of client-server, we wanted the UI separate for modularity. 
             </p>
             <p>
-               The app needed to handle routing and navigation which TKinter has no notion of, so I split it into "screens." This made the file structure easier to navigate. Each screen was like a component, very much designed to be React-like. 
+               The app needed to handle routing and navigation which TKinter has no notion of, so I split it into "screens." This made the file structure easier to navigate. Each screen was like a component, very much designed to be React-like.
             </p>
-          </p>
-          <p id="busin-backend">
+          </div>
+          <div id="busin-backend">
             <p><strong>Business Logic</strong></p>
             <p>
-              Signals from the GUI were passed here. First we checked the serial ports were open. We needed to communicate to the Arduino over serial.  
+              Signals from the GUI were passed here. First we checked the serial ports to the Arduino were open.
             </p>
             <p>
-               Second, using the GUI input we would construct a routine to run for throttle, brake, or auxiliary. Using the start-end bit protocol from before, Python <code>struct</code> converted our messages to C, and packed the message as binary. 
+               Second, using the GUI input  constructed a routine to run for throttle, brake, or auxiliary. Using the start-end bit protocol from before, Python <code>struct</code> converted our messages to C, and packed the message as binary. 
             </p>
-            <p>These binary message were sent out over serial telling the Arduino what to do. To keep the process running we had to continue sending messages stream-like on an interval. If the connection broke/timed-out the machine was supposed to stop. Safety first, right? This was all part of development. </p>
             <p>
-              We needed to communicate signals to the Arduino over serial  
-            </p>
+              These binary message were sent over over serial which the Arduino was listening for. To keep the process running we continued to send messages stream-like on an interval. If the connection broke/timed-out the machine was supposed to stop. Safety first, right? Truthfully, not always. But this was all part of development. 
           </p>
-To operate asynchronously between gui and logic required using this
+          <p>We did have had a kill switch too, and it did actually fail. Because it was in the code, it just signaled the arduino to stop the motors. There are many red flags with this design. It <em>should</em> have been a physical circuit breaker cutting off power to the motors.</p>
+          </div>
         </div>
+        <div id="socket-net">
+          <p><strong>Socket Network</strong></p>
+          <p>
+            We had no official server to handle requests but still needed to communicate  asynchronously between the GUI and logic. We used a socket. 
+          </p>
+        <p>
+          I did it all from scratch using the Python socket module. This added much extra complexity; the price for making the app modular and separating the concerns.
+        </p>
+        <p>
+          Putting the entire code base into a single giant file, for example, would have eliminated the need for a socket. But my fingers would never ever allow my brain to implement such a "design". They'd refuse to type. I do admit this was likely over-engineered and could be improved.
+        </p>
+        <p>
+          And I kind of lied. Our socket module was an infinite loop listening for connections, AKA a server. So using this we listened for messages coming from each side, either READ or WRITE.
+        </p>
+        <p>
+          I leaned heavily on the <a href="https://github.com/realpython/materials/tree/master/python-sockets-tutorial">Real Python Socket Tutorial</a>. Following a pattern for both messages, again using <code>struct</code>, where WRITE packed the data in specific order and READ unpacked it reversing the pattern, we identified which incoming data was relevant and needed attention. 
+        </p>
+        <pre class="language-c comment-block">
+          <code>
+            /* Selector I/O Bit Mask
+            *
+            * EVENT_READ  = 1  → 01
+            * EVENT_WRITE = 2  → 10
+            * both        = 3  → 11
+            */
+          </code>
+      </pre>
+      <p>When a new message comes to the server we check the mask and send to where it should go. </p>
+        <pre class="language-python"><code>
+            # performs bitwise on each binary digit - checks if read/write mode
+
+              # if mask AND with 1 is not zero
+            if mask & selectors.EVENT_READ:  # 1 << 0 or 1
+                self.read(read_mode_callback)
+            if mask & selectors.EVENT_WRITE:  # EVENT_WRITE =2
+                self.write(server_error_msg, simulation_is_complete, write_mode_callback)
+        </code>
+      </pre>
+      </div>
+
+
       </div>
     </div>
   </div>
