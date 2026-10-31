@@ -16,6 +16,9 @@
         timed intervals, fetches data from a source API, and sends it to a
         target API. This is the UI.
       </p>
+      <div class="image-container">
+        <img src="assets/pics/electron-main.jpg" alt="main-page-ui" />
+      </div>
       <p>
         This was a project started from scratch, and I wasn't given much detail.
         Just a few rough project parameters, and a few suggestions about what
@@ -35,17 +38,14 @@
           <a href="#tech-stack">Tech Stack</a>: Choose languages and frameworks
         </li>
         <li>
-          Database: Create ERD diagrams for database tables for a then unknown
-          database type - MsSQL was the eventual choice
+          Database: Create ERD diagrams for database tables for a then-unknown
+          database type - MSSQL was the eventual choice
         </li>
         <li>
           <a href="#dep-and-prod">Deployment and Production</a>: Consider how
           the production environment will affect the design
         </li>
       </ol>
-      <div class="image-container">
-        <img src="assets/pics/electron-main.jpg" alt="main-page-ui" />
-      </div>
       <div id="fn-req">
         <h4>Functional Requirements</h4>
         <ul>
@@ -66,14 +66,14 @@
             </ul>
           </li>
           <li>
-            Primary task #2 - Shape the JSON payload and send to target
+            Primary task #2 - Shape the JSON payload and send it to the target
             <ul>
               <li>
-                Allow user to choose from list of targets where to send the
+                Allow the user to choose from a list of targets where to send the
                 payload.
               </li>
               <li>
-                Clean, flatten, and process PI API data to match shape of chosen
+                Clean, flatten, and process PI API data to match the shape of the chosen
                 target. Send the payload.
               </li>
             </ul>
@@ -101,7 +101,7 @@
       <div id="tech-stack">
         <h4>Tech Stack</h4>
         <p>
-          Finally the fun part! Deciding which languages and frameworks to use.
+          Finally, the fun part! Deciding which languages and frameworks to use.
         </p>
         <p>
           Choosing the client/server design meant we were building a web app
@@ -119,7 +119,7 @@
             </ul>
           </li>
           <li>
-            Fastify: NodeJS Express-like framework used to build our backend
+            Fastify: Node.js Express-like framework used to build our backend
             REST API
             <ul>
               <li>
@@ -137,7 +137,7 @@
             building UI
             <ul>
               <li>
-                Advertised as the fastest of the virtual-dom frameworks, and
+                Advertised as the fastest of the virtual DOM frameworks, and
                 works well with Electron
               </li>
             </ul>
@@ -146,7 +146,7 @@
             Prisma: Modern ORM handles database interaction
             <ul>
               <li>
-                If we needed to support different databases we didn't want to
+                If we needed to support different databases, we didn't want to
                 rewrite our own SQL for each one
               </li>
               <li>Prisma ORM supports all the major databases</li>
@@ -164,14 +164,14 @@
         decisions needed to consider this.
       </p>
       <p>
-        Every deployment is a separate isolated instance. In this single tenancy
-        model each installation needs to provide the entire processing and
+        Every deployment is a separate isolated instance. In this single-tenancy
+        model, each installation needs to provide the entire processing and
         database apparatus for all app operations.
       </p>
       <p>
         Shipping the frontend Electron side is pretty standard. The challenge
         was the Fastify backend. It needed to ship as an executable wrapped by
-        some C# making it runnable as a Windows service. The client then brings
+        some C#, making it runnable as a Windows service. The client then brings
         their own MsSQL database.
       </p>
     </div>
@@ -179,7 +179,7 @@
   <hr />
   <div class="job-detail" id="dyno-proj">
     <div id="lytehorse-dyno">
-      <h3>Building a DIY Dynamomete</h3>
+      <h3>Building a DIY Dynamometer</h3>
       <h4>Lytehorse | Project Dates: May 2022 - Aug 2022</h4>
       <p class="tldr">
         <strong>TL;DR</strong> Dynamometers are used to test vehicles. They
@@ -187,15 +187,15 @@
         components to build one ourselves.
       </p>
       <div>
-        <p>There were 3 main parts to this project.</p>
+        <p>There were three main parts to this project.</p>
         <ol>
           <li>
-            <a href="#proto-and-elec">Prototyping and Hardware</a>: Metal stuff,
+            <a href="#proto-and-elec">Prototyping and Electronics</a>: Metal stuff,
             circuits, and making motors turn
           </li>
           <li>
             <a href="#hardware-prog">Arduino Programming</a>: Programming
-            embedded C++ in Arduino Studio
+            embedded C++ in Arduino IDE
           </li>
           <li>
             <a href="#dyno-app">Building Dyno Application</a>: Main Python
@@ -203,7 +203,7 @@
           </li>
         </ol>
         <div id="proto-and-elec">
-          <h4>Prototyping and Electronics</h4>
+          <h4>Prototyping and Hardware</h4>
           <div class="image-container">
             <img src="assets/pics/full.png" alt="dyno-with-vehicle" />
           </div>
@@ -228,8 +228,7 @@
             protocol to send and receive communications over serial. We used a
             <a href="https://www.pjrc.com/store/teensy41_pins.html">Teensy</a>
             microcontroller, which is a souped-up Arduino. See image below. It
-            had eight serial ports which we needed. We needed a lot of serial
-            ports to handle all asynchronous communication between devices.
+            had eight serial ports, which we needed to handle all asynchronous communication between devices.
           </p>
           <p>
             I'm writing this years after this project ended and don't remember
@@ -244,22 +243,22 @@
         <div id="hardware-prog">
           <h4>Arduino Programming</h4>
           <p><strong>The gist</strong>:   the    computer sits on one end, the motor
-            controllers on the other, and all comms pass through the Arduino. So Arduino had to handle bidirectional I/O from both sources:</p>
+            controllers on the other, and all comms pass through the Arduino. So the Arduino had to handle bidirectional I/O from both sources:</p>
           <ol>
             <li><strong>Source In/Out:</strong>   Python desktop app &lt;=&gt; Arduino</li>
             <li><strong>Target Out/In:</strong> Arduino &lt;=&gt; Motor controllers</li>
           </ol>
           <p><strong>1. Source In/Out</strong></p>
           <p>
-            The app instigates the communication and Arduino listens by default using the <code>void loop()</code> API. Incoming messages are broken apart so we can identify what the instructions are. These are executed in part 2.
+            The app instigates the communication and the Arduino listens by default using the <code>void loop()</code> API. Incoming messages are broken apart so we can identify what the instructions are. These are executed in part 2.
           </p>
           <p>
             These needed to be fed into a simple state
-            machine. To handle this we used something like  <a href="https://www.scribd.com/document/618493902/JBD-Protocol-English-version#google_vignette">JBD BMS Protocol</a>, which is from an
-            auto industry battery and electrics company. Our version uses the same start and end byte patterns, but the rest of ours is a mishmash.
+            machine. To handle this, we used something like the <a href="https://www.scribd.com/document/618493902/JBD-Protocol-English-version#google_vignette">JBD BMS Protocol</a> which is from an
+            auto industry battery and electrics company. Our version uses the same start and end byte patterns, but the rest is a mishmash.
           </p>
            <p>
-            Shown here is the scratch protocol. See how it's book-ended by the JBD BMS hexadecimal byte patterns <code>[0xDD]</code> and <code>[0x77]</code>? This is the basis of the state processing.
+            Shown here is the scratch protocol. See how it's bookended by the JBD BMS hexadecimal byte patterns <code>[0xDD]</code> and <code>[0x77]</code>? This is the basis of the state processing.
           </p>
           <pre class="comment-block"><code class="language-c">
             /* Message Format
@@ -372,8 +371,8 @@
             }
           </code></pre>
           <p><strong>2. Target Out/In</strong></p>
-          <p>Once the message has run through all the states and is validated, it hits the function <code>handle_uart_rx_message</code>. This sends the instruction output to the controllers by <code>analogWrite</code> to the output pins. We set the desired intensity, and the motor controllers turn the bits into something physical. This is what allows us to run the vehicle from a computer.</p>
-          <p>How the machines' controller operations actually receive, parse and turn the signals into work is another gap, lost to those same time sands.</p>
+          <p>Once the message has run through all the states and is validated, it hits the function <code>handle_uart_rx_message</code>. This sends the instruction output to the controllers by <code>analogWrite</code> on the output pins. We set the desired intensity and the motor controllers turn the bits into something physical. This is what allows us to plug in the vehicle and run it from a computer.</p>
+          <p>How the machines' controller operations actually receive, parse, and turn the signals into work is another gap, lost to those same time sands.</p>
           <pre><code class="language-c">
             void set_electric_speed_control_throttle(uint8_t id, uint8_t throttle)
             {
@@ -388,14 +387,14 @@
           <p>This was the desktop application that operated the dyno. I worked on this section the most.
           </p>
           <p>
-            It was built using Python Tkinter. This was chosen before my time. Tkinter is great because it's built into Python and works well for simple GUIs. It was not the best choice for a complicated multi-page app like this. I so was frustrated I built <a href="{{ '../work' | relative_url }}#tk-devtools">tkinter-devtools</a> so I didn't need to keep restarting the app to see every single little change.
+            It was built using Python Tkinter. This was chosen before my time. Tkinter is great because it's built into Python and works well for simple GUIs. It was not the best choice for a complicated multi-page app like this. I was so frustrated that I built <a href="{{ '../work' | relative_url }}#tk-devtools">tkinter-devtools</a> so I didn't need to keep restarting the app to see every single little change.
           </p>
           <p>
-            Tkinter is a steam engine or wood burning stove. Reliable, but not a modern tool for building software
+            Tkinter is a steam engine or wood-burning stove. Reliable, but not a modern tool for building software.
           </p>
           <ul>
             <li>
-              In a world of components it still uses "widgets" to construct pages
+              In a world of components, it still uses "widgets" to construct pages
             </li>
             <li>
               Widgets must be "packed" just to show up, and most page geometry must be handled manually
@@ -408,31 +407,31 @@
            There were three main modules:
           </p>
           <ol>
-           <li><a href="#gui-frontend">Gui Interface "Frontend"</a></li>
+           <li><a href="#gui-frontend">GUI "Frontend"</a></li>
            <li><a href="#busin-backend">Business Logic "Backend"</a></li>
            <li><a href="#socket-net">Socket Networking Interface</a></li>
           </ol>
           <div id="gui-frontend">
-            <p><strong>GUI Interface</strong></p>
+            <p><strong>GUI</strong></p>
             <p>
               In the spirit of client-server, we wanted the UI separate for modularity. 
             </p>
             <p>
-               The app needed to handle routing and navigation which TKinter has no notion of, so I split it into "screens." This made the file structure easier to navigate. Each screen was like a component, very much designed to be React-like.
+               The app needed to handle routing and navigation, which Tkinter has no notion of, so I split it into "screens." This made the file structure easier to navigate. Each screen was like a component, very much designed to be React-like.
             </p>
           </div>
           <div id="busin-backend">
             <p><strong>Business Logic</strong></p>
             <p>
-              Signals from the GUI were passed here. First we checked the serial ports to the Arduino were open.
+              Signals from the GUI were passed here. First, we checked that the serial ports to the Arduino were open.
             </p>
             <p>
-               Second, using the GUI input  constructed a routine to run for throttle, brake, or auxiliary. Using the start-end bit protocol from before, Python <code>struct</code> converted our messages to C, and packed the message as binary. 
+               Second, using the GUI input, we constructed a routine to run for throttle, brake, or auxiliary. Using the start-end bit protocol from before, Python <code>struct</code> converted our messages to C, and packed the message as binary. 
             </p>
             <p>
-              These binary message were sent over over serial which the Arduino was listening for. To keep the process running we continued to send messages stream-like on an interval. If the connection broke/timed-out the machine was supposed to stop. Safety first, right? Truthfully, not always. But this was all part of development. 
+              These binary messages were sent over serial which the Arduino was listening for. To keep the process running, we continued to send messages stream-like on an interval. If the connection broke/timed-out the machine was supposed to stop. Safety first, right? Truthfully, not always. But this was all part of development. 
           </p>
-          <p>We did have had a kill switch too, and it did actually fail. Because it was in the code, it just signaled the arduino to stop the motors. There are many red flags with this design. It <em>should</em> have been a physical circuit breaker cutting off power to the motors.</p>
+          <p>We did have a kill switch too, and it did actually fail. Because it was in the code, it just signaled the Arduino to stop the motors. There are many red flags with this design. It <em>should</em> have been a physical circuit breaker cutting off power to the motors.</p>
           </div>
         </div>
         <div id="socket-net">
@@ -441,16 +440,16 @@
             We had no official server to handle requests but still needed to communicate  asynchronously between the GUI and logic. We used a socket. 
           </p>
         <p>
-          I did it all from scratch using the Python socket module. This added much extra complexity; the price for making the app modular and separating the concerns.
+          I did it all from scratch using the Python socket module. This added much extra complexity: the price of making the app modular and separating the concerns.
         </p>
         <p>
-          Putting the entire code base into a single giant file, for example, would have eliminated the need for a socket. But my fingers would never ever allow my brain to implement such a "design". They'd refuse to type. I do admit this was likely over-engineered and could be improved.
+          Putting the entire code base into a single giant file, for example, would have eliminated the need for a socket. But my fingers would never ever allow my brain to implement such a "design." They'd refuse to type. I do admit this was likely over-engineered and could be improved.
         </p>
         <p>
-          And I kind of lied. Our socket module was an infinite loop listening for connections, AKA a server. So using this we listened for messages coming from each side, either READ or WRITE.
+          And I kind of lied. Our socket module was an infinite loop listening for connections, AKA a server. Using this, we listened for messages coming from each side, either READ or WRITE.
         </p>
         <p>
-          I leaned heavily on the <a href="https://github.com/realpython/materials/tree/master/python-sockets-tutorial">Real Python Socket Tutorial</a>. Following a pattern for both messages, again using <code>struct</code>, where WRITE packed the data in specific order and READ unpacked it reversing the pattern, we identified which incoming data was relevant and needed attention. 
+          I leaned heavily on the <a href="https://github.com/realpython/materials/tree/master/python-sockets-tutorial">Real Python Socket Tutorial</a>. Following a pattern for both messages, again using <code>struct</code>, where WRITE packed the data in a specific order and READ unpacked it reversing the pattern, we identified which incoming data was relevant and needed attention. 
         </p>
         <pre class="language-c comment-block">
           <code>
@@ -462,7 +461,7 @@
             */
           </code>
       </pre>
-      <p>When a new message comes to the server we check the mask and send to where it should go. </p>
+      <p>When a new message reaches the server, we check the mask and send it where it should go. </p>
         <pre class="language-python"><code>
             # performs bitwise on each binary digit - checks if read/write mode
 
