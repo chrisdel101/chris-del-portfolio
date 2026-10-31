@@ -197,7 +197,7 @@
           </li>
         </ol>
         <div id="proto-and-elec">
-          <h4>ProtoTyping and Electronics</h4>
+          <h4>Prototyping and Electronics</h4>
           <div class="image-container">
             <img src="assets/pics/full.png" alt="dyno-with-vehicle" />
           </div>
@@ -221,9 +221,9 @@
             On the user's end, a Python program used our custom UART-based
             protocol to send and receive communications over serial. We used a
             <a href="https://www.pjrc.com/store/teensy41_pins.html">Teensy</a>
-            microcontroller, which is a suped up Arduino. See image below. It
-            had eight serial ports which we needed. We needed alot of serial
-            ports to handles all asynchronous communication between devices.
+            microcontroller, which is a souped-up Arduino. See image below. It
+            had eight serial ports which we needed. We needed a lot of serial
+            ports to handle all asynchronous communication between devices.
           </p>
           <p>
             I'm writing this years after this project ended and don't remember
@@ -236,7 +236,7 @@
           </div>
         </div>
         <div id="hardware-prog">
-          <h4>Harwdware Programmming</h4>
+          <h4>Arduino Programming</h4>
           <p><strong>The gist</strong>:   the    computer sits on one end, the motor
             controllers on the other, and all comms pass through the Arduino. So Arduino had to handle bidirectional I/O from both sources:</p>
           <ol>
@@ -253,7 +253,7 @@
             auto industry battery and electrics company. Our version uses the same start and end byte patterns, but the rest of ours is a mishmash.
           </p>
            <p>
-            Shown here is the scratch protocol. See how the book-ended by the JBD BMS hexadecimal byte patterns <code>[0xDD]</code> and <code>[0x77]</code>? This is the basis of the state processing.
+            Shown here is the scratch protocol. See how it's book-ended by the JBD BMS hexadecimal byte patterns <code>[0xDD]</code> and <code>[0x77]</code>? This is the basis of the state processing.
           </p>
           <div class="pico" data-theme="light">
             <blockquote>
@@ -350,7 +350,7 @@
               if (data_in == UART_RX_END_BIT_PATTERN)
               {
                 // Message is valid, pass to process function
-                uart_rx_message(rx_header.msg_id, rx_header.bus_id, rx_header.len, rx_data);
+                handle_uart_rx_message(rx_header.msg_id, rx_header.bus_id, rx_header.len, rx_data);
               }
 
               // Move back to Idle state to receive next message
@@ -368,9 +368,70 @@
             }
           </code></pre>
           <p><strong>2. Target Out/In</strong></p>
-          <p>Once the message is parsed and validated we run <code>uart_rx_message</code>. This sends the instructions output</p>
+          <p>Once the message has run through all the states and is validated, it hits the function <code>handle_uart_rx_message</code>. This sends the instruction output to the controllers by <code>analogWrite</code> to the output pins. We set the desired intensity, and the motor controllers turn the bits into something physical. This is what allows us to run the vehicle from a computer.</p>
+          <p>How the machines' controller operations actually receive, parse and turn the signals into work is another gap, lost to those same time sands.</p>
+          <pre><code class="language-c">
+            void set_electric_speed_control_throttle(uint8_t id, uint8_t throttle)
+            {
+              throttles[id] = throttle; // Set the throttle level for this channel
+              throttle_time_ms[id] = millis(); // Record the current time in milliseconds
+              analogWrite(throttle_pins[id], throttles[id]); // Update the PWM duty cycle on the pin
+            }
+          </code></pre>
         </div>
-
+        <div id="dyno-app">
+          <h4>Dyno App</h4>
+          <p>This was the desktop application that operated the dyno. I worked on this section the most.
+          </p>
+          <p>
+            It was built using Python Tkinter. This was chosen before my time. Tkinter is great because it's built into Python and works well for simple GUIs. It was not the best choice for a complicated multi-page app like this. I so was frustrated I built <a href="{{ '../work' | relative_url }}#tk-devtools">tkinter-devtools</a> so I didn't need to keep restarting the app to see every single little change.
+          </p>
+          <p>
+            Tkinter is a steam engine or wood burning stove. Reliable, but not a modern tool for building software
+          </p>
+            <ul>
+              <li>
+                In a world of components it still uses "widgets" to construct pages
+              </li>
+              <li>
+                Widgets must be "packed" just to show up, and most page geometry must be handled manually
+              </li>
+              <li>
+                And styling...fuhgeddaboudit.
+              </li>
+            </ul>
+          <p>  
+           There were three main modules:
+          </p>
+          <ol>
+           <li><a href="gui-frontend">Gui Interface "Frontend"</a></li>
+           <li><a href="busin-backend">Business Logic "Backend"</a></li>
+           <li><a href="socket-net">Socket Networking Interface</a></li>
+          </ol>
+          <p id="gui-frontend">
+            <p><strong>GUI Interface</strong></p>
+            <p>
+              In the spirit of client-server, we wanted the UI separate for modularity. 
+            </p>
+            <p>
+               The app needed to handle routing and navigation which TKinter has no notion of, so I split it into "screens." This made the file structure easier to navigate. Each screen was like a component, very much designed to be React-like. 
+            </p>
+          </p>
+          <p id="busin-backend">
+            <p><strong>Business Logic</strong></p>
+            <p>
+              Signals from the GUI were passed here. First we checked the serial ports were open. We needed to communicate to the Arduino over serial.  
+            </p>
+            <p>
+               Second, using the GUI input we would construct a routine to run for throttle, brake, or auxiliary. Using the start-end bit protocol from before, Python <code>struct</code> converted our messages to C, and packed the message as binary. 
+            </p>
+            <p>These binary message were sent out over serial telling the Arduino what to do. To keep the process running we had to continue sending messages stream-like on an interval. If the connection broke/timed-out the machine was supposed to stop. Safety first, right? This was all part of development. </p>
+            <p>
+              We needed to communicate signals to the Arduino over serial  
+            </p>
+          </p>
+To operate asynchronously between gui and logic required using this
+        </div>
       </div>
     </div>
   </div>
