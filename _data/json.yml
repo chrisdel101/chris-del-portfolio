@@ -10,17 +10,18 @@
 - key: skills & interests
   value: /manifest
   url: /manifest
-- key: professional stuff --verbose
+- key: professional history --verbose
   value:
       - value: /work-history  
         url: /work-history
       - value: /work-history-projects
         url: /work-history-projects 
-      - value: /resume
-        url: /resume.pdf
-- key: projects
-  value: /work
-  url: /work
+- key: resume
+  value: /resume
+  url: /resume
+- key: personal projects
+  value: /personal-projects
+  url: /personal-projects
 - key: open source
   value: /open-source
   url: /open-source

@@ -31,7 +31,7 @@ layout: page
         </div>
         <div class="work-project">
             <div>
-                <a href="https://hackernews-whosehiring.vercel.app/2024/3">Hacker News Who's Hiring</a>
+                <a href="https://hackernews-whosehiring.vercel.app">Hacker News Who's Hiring</a>
             </div>
             <div>
                 About: An easy to search take on the "Who's Hiring" thread from Hacker News. Built 2024.  
@@ -94,7 +94,7 @@ layout: page
                 Tech: Elixir, Phoenix, Postgres, Mailgun, Twilio
             </div>
              <div>
-                Status: In Development
+                Status: Abandoned
             </div>
         </div>
         <div class="work-project">
