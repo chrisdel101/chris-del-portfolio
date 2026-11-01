@@ -5,7 +5,7 @@ layout: page
 <div class="page-container open-source-container">
     <div class="page-heading">
         <h2 class="work-related-header">Open Source Contributions</h2>
-        <a href="{{ '/' | relative_url }}">
+        <a href="{{ '/' | relative_url }}" title="Home" aria-label="Home">
             <div class="cir icon">CD</div>
         </a>
         <div>

@@ -6,7 +6,7 @@ layout: page
 <section class="manifest-container page-container">
   <div class="page-heading">
     <h2 class="work-related-header no-print">Skills Manifest</h2>
-    <a class="no-print" href="{{ '/' | relative_url }}">
+    <a class="no-print" href="{{ '/' | relative_url }}" title="Home" aria-label="Home">
       <div class="cir icon">CD</div>
     </a>
     <div class="no-print">Development Journey</div>
@@ -51,11 +51,11 @@ layout: page
           </tr>
           <tr>
             <td>SQL/Postgres</td>
-            <td>5</td>
+            <td>5+</td>
           </tr>
         </table>
         <h5>SECOND TIER</h5>
-        <div><em>Useful But I'd Need the Docs</em></div>
+        <div><em>Useful, but I'd Need the Docs</em></div>
         <table>
          <tr>
             <th>Tech</th>
@@ -70,16 +70,16 @@ layout: page
             <td>2</td>
           </tr>
           <tr>
-            <td>Rails/Ruby</td>
+            <td>Ruby/Rails</td>
             <td>1</td>
           </tr>
           <tr>
-            <td>Bash Script</td>
+            <td>Bash</td>
             <td>3</td>
           </tr>
         </table>
         <h5>THIRD TIER</h5>
-        <div><em>Used Before, And Could Again</em></div>
+        <div><em>Used Before and Could Again</em></div>
         <table>
          <tr>
             <th>Tech</th>
@@ -113,22 +113,22 @@ layout: page
           <li>
           Fulfilling Project Requirements
             <ul>
-                <li>Delivering software that matches requirements, and operates as expected</li>
+                <li>Delivering software that matches requirements and operates as expected</li>
             </ul>
           </li>
             <li>
             Creative Problem Solving
             <ul>
               <li>
-               Extracting important requirements when details are limited  
+               Extracting important requirements when details are limited
               </li>
-              <li>Constructing designs through stories and dialogue </li>
+              <li>Constructing designs through stories and dialogue</li>
               <li>
                 Delivering shippable solutions on schedule
               </li>
               <li>Creating automation for repetitive or lengthy tasks</li>
               <li>
-                Patching libraries, versioning, environments at unexpected failure points
+                Patching libraries, versions, and environments at unexpected failure points
               </li>
             </ul>
           </li>
@@ -136,31 +136,31 @@ layout: page
             Architecting and Designing
             <ul>
               <li>
-                Initiating with design documents, diagramming, and wireframing
+                Starting with design documents, diagramming, and wireframing
               </li>
               <li>
-                Researching best tools/structures to match requirements
+                Researching the best tools and structures to match requirements
               </li>
               <li>
-               Considering factors like deployment, security, operating system, production environment, and distribution in design choice
+               Considering factors like deployment, security, operating system, production environment, and distribution in design choices
               </li>
               <li>
-               Keeping naming and foldering consistent
+               Keeping naming and folder structure consistent
               </li>
               <li>
-                Using software design patterns such as observer, factory, decorator
+                Using software design patterns such as observer, factory, and decorator
               </li>
             </ul>
           </li>
           <li>
-          Clean Coding 
+          Clean Coding
           <ul>
             <li>
             Obsessing over:
                 <ol>
                     <li>Making code as readable as possible</li>
                     <li>Making code as concise as possible, without sacrificing readability</li>
-                    <li>Making code design app-wide as consistent as possible</li>
+                    <li>Making code design consistent app-wide</li>
                     <li>Reusing and keeping things DRY</li>
                 </ol>
             </li>
@@ -182,6 +182,14 @@ layout: page
               <li>Building API docs using Swagger</li>
             </ul>
           </li>
+          <li>
+            Working in Ambuguity
+            <ul>
+              <li>Capable of producing positive outcomes from ambigious directions</li>
+              <li>Filling in the blanks for lacking or missing requirements
+              </li>
+            </ul>
+          </li>
           <li>Public Speaking/Writing/Presenting</li>
         </ul>
       </div>
@@ -194,7 +202,7 @@ layout: page
         <li>Networks and Protocols</li>
         <li>Computer Graphics</li>
         <li>Mobile Development</li>
-        <li>Assembly and MIPS</li>
+        <li>MIPS Assembly</li>
       </ul>
     </div>
     </div>

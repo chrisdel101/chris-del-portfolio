@@ -4,7 +4,7 @@ layout: page
 <div class="page-container work-container">
     <div class="work-heading">
         <h2>Personal Project Work</h2>
-        <a href="{{ '/' | relative_url }}">
+        <a href="{{ '/' | relative_url }}" title="Home" aria-label="Home">
             <div class="cir icon">CD</div>
         </a>
         <div>

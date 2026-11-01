@@ -6,7 +6,7 @@ layout: page
 <section class="work-related-container page-container">
     <div class="page-heading">
         <h2 class="work-related-header" >Professional Experience</h2>
-        <a href="{{ '/' | relative_url }}">
+        <a href="{{ '/' | relative_url }}" title="Home" aria-label="Home">
             <div class="cir icon">CD</div>
         </a>    
         <div  class="work-related-header">Work History and Experience</div>
