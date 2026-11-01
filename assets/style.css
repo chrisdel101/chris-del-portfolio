@@ -6,6 +6,46 @@ main {
   align-items: center;
   width: 100%;
 }
+/* home page: fill the screen the same way at every size */
+main:has(#json) {
+  height: 100vh;
+  height: 100dvh;
+  box-sizing: border-box;
+  padding: 4vh 4vw;
+  justify-content: center;
+  font-size: min(3.9vw, 2.6vh);
+  font-size: min(3.9vw, 2.6dvh);
+}
+#json {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  max-height: 40em;
+}
+#json .my {
+  margin: 0.5em 0;
+}
+#json .ms {
+  margin-left: 1.5em;
+}
+/* phones: bigger text, long values wrap to the next line */
+@media (max-width: 600px) and (orientation: portrait) {
+  main:has(#json) {
+    font-size: min(4.2vw, 2.7dvh);
+    padding: 4dvh 4vw;
+  }
+  #json {
+    white-space: normal;
+  }
+  #json .key,
+  #json .value {
+    white-space: nowrap;
+  }
+  #json .ms {
+    margin-left: 1em;
+  }
+}
 img {
   max-width: 100%;
 }
